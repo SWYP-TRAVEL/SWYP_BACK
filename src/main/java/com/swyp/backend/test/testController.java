@@ -1,6 +1,5 @@
-package com.swyp.backend.controller;
+package com.swyp.backend.test;
 
-import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
