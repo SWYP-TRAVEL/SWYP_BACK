@@ -15,7 +15,7 @@ class KakaoUserInfoTest {
 
     @Test
     void testGetUserInfo() throws Exception {
-        String accessToken = "XMN_nDyz1YJRkClxLtPcaX5iKn1YmgwBAAAAAQoNIdkAAAGWWHINCCHmgQBvj-MV";
+        String accessToken = "xK8FmzfUNfr7Y1d_lgymBYwu5JZbTPyaAAAAAQoXC9cAAAGWW-x3RSHmgQBvj-MV";
         KakaoUserDTO user = kakaoService.getUserInfoWithToken(accessToken);
 
         assertNotNull(user);

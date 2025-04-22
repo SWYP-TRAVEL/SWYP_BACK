@@ -15,9 +15,12 @@ public class User {
     private Long id;
 
     @Column(name = "kakao_id", unique = true)
-    private String kakaoId;
+    private Long kakaoId;
 
     @Column(nullable = false)
     private String name;
+
+    @Column(name = "refresh_token")
+    private String refreshToken;
 
 }

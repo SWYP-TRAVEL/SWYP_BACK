@@ -10,15 +10,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-@DisplayName("카카오 인가코드 → AccessToken 발급 테스트")
+@DisplayName("카카오 로그인 플로우 통합 테스트")
 public class KakaoServiceTest {
-
     @Autowired
     private KakaoService kakaoService;
 
     @Test
-    void testKakaoAccessToken() throws Exception {
-        String testCode = "U6X_Nf0Q3Omj6OKy-TEddp5WY7DovAam-ET_SxdCxMyPxzyRygx4_QAAAAQKDQxeAAABllhxyx3UNEQ5evY1pg";
+    @DisplayName("카카오 인가코드로 AccessToken 발급")
+    void testGetAccessToken() throws Exception {
+        String testCode = "";
         KakaoTokenResponse tokenResponse = kakaoService.getAccessToken(testCode);
 
         assertNotNull(tokenResponse);
@@ -26,4 +26,17 @@ public class KakaoServiceTest {
         System.out.println("[TEST] AccessToken: " + tokenResponse.getAccessToken());
     }
 
+    @Test
+    @DisplayName("인가코드로 로그인 처리 및 JWT 응답")
+    void testKakaoLoginFlow() throws Exception {
+        String testCode = "";
+        KakaoTokenResponse response = kakaoService.kakaoLogin(testCode);
+
+        assertNotNull(response);
+        assertNotNull(response.getAccessToken());
+        assertNotNull(response.getRefreshToken());
+        System.out.println("[TEST] JWT AccessToken: " + response.getAccessToken());
+        System.out.println("[TEST] JWT RefreshToken: " + response.getRefreshToken());
+    }
 }
+

@@ -3,6 +3,8 @@ package com.swyp.backend.auth.service;
 import com.swyp.backend.auth.dto.KakaoTokenResponse;
 import com.swyp.backend.auth.dto.KakaoUserDTO;
 import com.swyp.backend.auth.security.JwtTokenProvider;
+import com.swyp.backend.user.entity.User;
+import com.swyp.backend.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
@@ -22,6 +24,7 @@ public class KakaoService {
     private final static String KAKAO_AUTH_URI="https://kauth.kakao.com/oauth/token";
     private final static String KAKAO_API_URI = "https://kapi.kakao.com/v2/user/me";
     private final JwtTokenProvider jwtTokenProvider;
+    private final UserService userService;
     @Value("${kakao.client.id}")
     private String KAKAO_CLIENT_ID;
     @Value("${kakao.redirect.url}")
@@ -90,16 +93,17 @@ public class KakaoService {
         String name = kakaoUserDTO.getName();
         return jwtTokenProvider.createToken(kakaoId, name);
     }
-    public KakaoTokenResponse kakaoLogin(String code) throws Exception{
+    public KakaoTokenResponse kakaoLogin(String code) throws Exception {
         KakaoTokenResponse token = getAccessToken(code);
         KakaoUserDTO kakaoUser = getUserInfoWithToken(token.getAccessToken());
+        userService.saveOrGetUser(kakaoUser);
         KakaoTokenResponse jwt = createJwtFromKakaoUser(kakaoUser);
+        userService.saveRefreshToken(kakaoUser, jwt.getRefreshToken());
+
         return KakaoTokenResponse.builder()
                 .accessToken(jwt.getAccessToken())
                 .refreshToken(jwt.getRefreshToken())
                 .expiresIn(jwt.getExpiresIn())
                 .build();
     }
-
-
 }
