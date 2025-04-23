@@ -59,6 +59,3 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: ~/deploy.sh
-
-      - name: Build without tests
-        run: ./gradlew build -x test
