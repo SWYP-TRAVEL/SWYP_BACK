@@ -8,18 +8,30 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.filter.GenericFilterBean;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @RequiredArgsConstructor
 public class JwtAuthFilter extends GenericFilterBean {
     private final JwtTokenProvider jwtTokenProvider;
     private final JwtAuthentication jwtAuthentication;
+    private static final List<String> skipPaths = List.of(
+            "/api/v1/auth/kakao",
+            "/api/v1/auth/token/reissue"
+    );
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain)
             throws IOException, ServletException {
-
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-        String jwt = resolveToken(httpRequest);
+        //filter 통과
+        String path = httpRequest.getRequestURI();
+        if (skipPaths.stream().anyMatch(path::contains)) {
+            filterChain.doFilter(request, response);
+            return;
+        }
 
+        String jwt = resolveToken(httpRequest);
         if (StringUtils.hasText(jwt) && jwtTokenProvider.validateToken(jwt)) {
             Authentication authentication = jwtAuthentication.getAuthentication(jwt);
             SecurityContextHolder.getContext().setAuthentication(authentication);

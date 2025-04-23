@@ -26,7 +26,7 @@ public class JwtTokenProvider {
     private String secretKey;
     private final UserRepository userRepository;
 
-    private final Long tokenValidaity = 1000*60*1L; //1분
+    private final Long tokenValidaity = 1000L*10; // 10초 (test용)
 
     public KakaoTokenResponse createToken(String kakaoId, String name){
         Claims claims = Jwts.claims().setSubject(kakaoId);
@@ -80,7 +80,7 @@ public class JwtTokenProvider {
 
         return KakaoTokenResponse.builder()
                 .accessToken(accessToken)
-                .refreshToken(refreshToken)
+                .refreshToken(null)
                 .expiresIn(accessTokenExpiresIn.getTime())
                 .build();
     }

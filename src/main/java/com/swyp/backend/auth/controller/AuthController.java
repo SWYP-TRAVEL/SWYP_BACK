@@ -32,7 +32,7 @@ public class AuthController {
             // refreshToken → HttpOnly 쿠키
             ResponseCookie refreshCookie = ResponseCookie.from("refreshToken", jwt.getRefreshToken())
                     .httpOnly(true)
-                    .secure(true)
+                    .secure(false) // test용은 false처리
                     .path("/")
                     .sameSite("None")
                     .maxAge(60 * 60 * 24 * 15) // 15일
@@ -53,27 +53,32 @@ public class AuthController {
 
     @PostMapping("/token/reissue")
     public ResponseEntity<KakaoTokenResponse> reissue(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        String refreshToken = null;
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if ("refreshToken".equals(cookie.getName())) {
-                    refreshToken = cookie.getValue();
-                    break;
-                }
-            }
-        }
+        String refreshToken = extractFromCookie(request);
         if (refreshToken == null) {
+            System.out.println("cookie isnull");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
         try {
             KakaoTokenResponse newTokens = jwtTokenProvider.reissueToken(refreshToken);
             return ResponseEntity.ok(newTokens);
         } catch (Exception e) {
+            System.out.println("diff error");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
 
+    public String extractFromCookie(HttpServletRequest request){
+        Cookie[] cookies = request.getCookies();
+        if (cookies == null) {
+            return null;
+        }
+        for (Cookie cookie : cookies) {
+            if ("refreshToken".equals(cookie.getName())) {
+                return cookie.getValue();
+            }
+        }
+        return null;
+    }
 
 
 

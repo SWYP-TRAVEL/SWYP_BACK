@@ -1,0 +1,741 @@
+2025-04-24T00:28:24.504+09:00  INFO 11938 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Starting SwypBackendApplication using Java 21.0.7 with PID 11938 (/Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main/build/classes/java/main started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T00:28:24.509+09:00  INFO 11938 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : The following 1 profile is active: "local"
+2025-04-24T00:28:25.107+09:00  INFO 11938 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T00:28:25.141+09:00  INFO 11938 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+2025-04-24T00:28:25.528+09:00  INFO 11938 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T00:28:25.538+09:00  INFO 11938 --- [swyp_backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T00:28:25.538+09:00  INFO 11938 --- [swyp_backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T00:28:25.578+09:00  INFO 11938 --- [swyp_backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T00:28:25.579+09:00  INFO 11938 --- [swyp_backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1018 ms
+2025-04-24T00:28:25.675+09:00  INFO 11938 --- [swyp_backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T00:28:25.716+09:00  INFO 11938 --- [swyp_backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T00:28:25.738+09:00  INFO 11938 --- [swyp_backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T00:28:25.964+09:00  INFO 11938 --- [swyp_backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T00:28:25.982+09:00  INFO 11938 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T00:28:26.374+09:00  INFO 11938 --- [swyp_backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9880a15
+2025-04-24T00:28:26.375+09:00  INFO 11938 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T00:28:26.427+09:00  WARN 11938 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T00:28:26.431+09:00  WARN 11938 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T00:28:26.934+09:00  INFO 11938 --- [swyp_backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T00:28:27.026+09:00  INFO 11938 --- [swyp_backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:28:27.291+09:00  WARN 11938 --- [swyp_backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T00:28:27.308+09:00 DEBUG 11938 --- [swyp_backend] [main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T00:28:27.396+09:00 DEBUG 11938 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T00:28:27.442+09:00 DEBUG 11938 --- [swyp_backend] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T00:28:27.457+09:00 DEBUG 11938 --- [swyp_backend] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T00:28:27.473+09:00  INFO 11938 --- [swyp_backend] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T00:28:27.494+09:00 DEBUG 11938 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T00:28:27.517+09:00 DEBUG 11938 --- [swyp_backend] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T00:28:27.639+09:00  INFO 11938 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T00:28:27.648+09:00  INFO 11938 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Started SwypBackendApplication in 3.435 seconds (process running for 3.683)
+2025-04-24T00:28:31.548+09:00  INFO 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T00:28:31.550+09:00  INFO 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T00:28:31.551+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-04-24T00:28:31.551+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-04-24T00:28:31.551+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-04-24T00:28:31.559+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3c3a767
+2025-04-24T00:28:31.560+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5bb90b89
+2025-04-24T00:28:31.562+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-04-24T00:28:31.563+09:00  INFO 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2025-04-24T00:28:31.576+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/v1/auth/kakao
+2025-04-24T00:28:31.576+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/v1/auth/kakao
+2025-04-24T00:28:31.582+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:28:31.582+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:28:31.583+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/v1/auth/kakao
+2025-04-24T00:28:31.583+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/v1/auth/kakao
+2025-04-24T00:28:31.585+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:28:31.585+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:28:31.587+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:28:31.587+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:28:31.601+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:28:31.601+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:28:31.615+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:28:31.616+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:28:31.617+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:28:31.663+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@4e3b9b96]
+2025-04-24T00:28:31.663+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@1fddaea1]
+2025-04-24T00:28:31.704+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:28:31.704+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:28:31.708+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:28:31.708+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:28:31.708+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[8_-UKm07-sK0ONSIK-hSMcmlajDEjXk8UGqm0iC2TSF_cGdPeIyVJgAAAAQKFwYuAAABlmND0MUtjdRiIM79qQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:28:31.708+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[8_-UKm07-sK0ONSIK-hSMcmlajDEjXk8UGqm0iC2TSF_cGdPeIyVJgAAAAQKFwYuAAABlmND0MUtjdRiIM79qQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:28:31.935+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:28:31.934+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:28:31.938+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:28:31.940+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:28:31.970+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T00:28:31.970+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T00:28:31.970+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:28:31.970+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:28:32.041+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:28:32.041+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:28:32.051+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:28:32.051+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:28:32.229+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:28:32.229+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:28:32.230+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T00:28:32.230+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T00:28:32.235+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:28:32.235+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:28:44.440+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:28:44.442+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:28:44.443+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:28:44.443+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:28:44.444+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:28:44.457+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@4717c3e9]
+2025-04-24T00:28:44.464+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:28:44.466+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:28:44.466+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[8_-UKm07-sK0ONSIK-hSMcmlajDEjXk8UGqm0iC2TSF_cGdPeIyVJgAAAAQKFwYuAAABlmND0MUtjdRiIM79qQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:28:44.536+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Response 400 BAD_REQUEST
+2025-04-24T00:28:44.543+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-04-24T00:28:44.543+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2025-04-24T00:28:44.544+09:00 DEBUG 11938 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-04-24T00:29:03.816+09:00  INFO 11938 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:29:03.835+09:00  INFO 11938 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T00:29:03.850+09:00  INFO 11938 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T00:31:27.028+09:00  INFO 13695 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Starting SwypBackendApplication using Java 21.0.7 with PID 13695 (/Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main/build/classes/java/main started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T00:31:27.030+09:00  INFO 13695 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : The following 1 profile is active: "local"
+2025-04-24T00:31:27.650+09:00  INFO 13695 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T00:31:27.682+09:00  INFO 13695 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interface.
+2025-04-24T00:31:28.011+09:00  INFO 13695 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T00:31:28.019+09:00  INFO 13695 --- [swyp_backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T00:31:28.020+09:00  INFO 13695 --- [swyp_backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T00:31:28.055+09:00  INFO 13695 --- [swyp_backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T00:31:28.056+09:00  INFO 13695 --- [swyp_backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 955 ms
+2025-04-24T00:31:28.154+09:00  INFO 13695 --- [swyp_backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T00:31:28.185+09:00  INFO 13695 --- [swyp_backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T00:31:28.202+09:00  INFO 13695 --- [swyp_backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T00:31:28.376+09:00  INFO 13695 --- [swyp_backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T00:31:28.397+09:00  INFO 13695 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T00:31:28.743+09:00  INFO 13695 --- [swyp_backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbe486c
+2025-04-24T00:31:28.744+09:00  INFO 13695 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T00:31:28.784+09:00  WARN 13695 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T00:31:28.784+09:00  WARN 13695 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T00:31:29.376+09:00  INFO 13695 --- [swyp_backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T00:31:29.444+09:00  INFO 13695 --- [swyp_backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:31:29.777+09:00  WARN 13695 --- [swyp_backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T00:31:29.796+09:00 DEBUG 13695 --- [swyp_backend] [main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T00:31:29.887+09:00 DEBUG 13695 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T00:31:29.929+09:00 DEBUG 13695 --- [swyp_backend] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T00:31:29.944+09:00 DEBUG 13695 --- [swyp_backend] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T00:31:29.958+09:00  INFO 13695 --- [swyp_backend] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T00:31:29.974+09:00 DEBUG 13695 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T00:31:29.993+09:00 DEBUG 13695 --- [swyp_backend] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T00:31:30.102+09:00  INFO 13695 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T00:31:30.108+09:00  INFO 13695 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Started SwypBackendApplication in 3.389 seconds (process running for 3.714)
+2025-04-24T00:31:33.548+09:00  INFO 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T00:31:33.549+09:00  INFO 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T00:31:33.549+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-04-24T00:31:33.549+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-04-24T00:31:33.549+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-04-24T00:31:33.551+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1cc878e6
+2025-04-24T00:31:33.551+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@73eaae1e
+2025-04-24T00:31:33.552+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-04-24T00:31:33.552+09:00  INFO 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-24T00:31:33.572+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:31:33.572+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:31:33.576+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:31:33.576+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:31:33.577+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:31:33.577+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:31:33.578+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:31:33.578+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:31:33.579+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:31:33.579+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:31:33.581+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:31:33.581+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:31:33.708+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@612f87e4]
+2025-04-24T00:31:33.708+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@7d26627a]
+2025-04-24T00:31:33.766+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:31:33.766+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:31:33.770+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:31:33.770+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:31:33.771+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[1d_Lsfh0z6fp9ewt5We5hCOVtPZ7yAJHNy0i503jGroKP6i56R5SAQAAAAQKDSHZAAABlmNGmDX6Fwx8Dt1GgQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:31:33.771+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[1d_Lsfh0z6fp9ewt5We5hCOVtPZ7yAJHNy0i503jGroKP6i56R5SAQAAAAQKDSHZAAABlmNGmDX6Fwx8Dt1GgQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:31:33.925+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:31:33.926+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:31:33.927+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:31:33.927+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:31:33.937+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T00:31:33.938+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:31:33.938+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T00:31:33.939+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:31:34.011+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:31:34.011+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:31:34.011+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:31:34.011+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:31:34.186+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:31:34.186+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:31:34.187+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T00:31:34.187+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T00:31:34.191+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:31:34.191+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:31:42.812+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:31:42.815+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:31:42.816+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:31:42.817+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:31:42.817+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:31:42.823+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@13aaeb49]
+2025-04-24T00:31:42.828+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:31:42.829+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:31:42.829+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[1d_Lsfh0z6fp9ewt5We5hCOVtPZ7yAJHNy0i503jGroKP6i56R5SAQAAAAQKDSHZAAABlmNGmDX6Fwx8Dt1GgQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:31:42.916+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.web.client.RestTemplate              : Response 400 BAD_REQUEST
+2025-04-24T00:31:42.934+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-04-24T00:31:42.934+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2025-04-24T00:31:42.935+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-04-24T00:36:36.291+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:36:36.291+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:36:36.314+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:36:36.314+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:36:36.338+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:36:36.338+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:36:36.344+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:36:36.344+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:36:36.353+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:36:36.353+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:36:36.354+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:36:36.354+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:36:36.383+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@749ac9df]
+2025-04-24T00:36:36.383+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@8e3e933]
+2025-04-24T00:36:36.449+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:36:36.450+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:36:36.452+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:36:36.452+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:36:36.452+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[giSl2abNChRCXRzzZHQAsyVErj3nyQzfDEBKBR1_jtAB4BszCtbAWQAAAAQKDRWbAAABlmNLN9wq17LwdM8QAg]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:36:36.452+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[giSl2abNChRCXRzzZHQAsyVErj3nyQzfDEBKBR1_jtAB4BszCtbAWQAAAAQKDRWbAAABlmNLN9wq17LwdM8QAg]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:36:36.608+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.web.client.RestTemplate              : Response 400 BAD_REQUEST
+2025-04-24T00:36:36.612+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:36:36.612+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2025-04-24T00:36:36.613+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-04-24T00:36:36.638+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:36:36.639+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:36:36.662+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T00:36:36.662+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:36:36.812+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:36:36.812+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:36:37.031+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:36:37.031+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T00:36:37.033+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:36:52.819+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:36:52.829+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:36:52.841+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:36:52.842+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:36:52.843+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:36:52.851+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@75416736]
+2025-04-24T00:36:52.855+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:36:52.856+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:36:52.856+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[giSl2abNChRCXRzzZHQAsyVErj3nyQzfDEBKBR1_jtAB4BszCtbAWQAAAAQKDRWbAAABlmNLN9wq17LwdM8QAg]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:36:52.911+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.client.RestTemplate              : Response 400 BAD_REQUEST
+2025-04-24T00:36:52.915+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-04-24T00:36:52.915+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2025-04-24T00:36:52.916+09:00 DEBUG 13695 --- [swyp_backend] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-04-24T00:44:39.656+09:00  INFO 13695 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:44:39.751+09:00  INFO 13695 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T00:44:39.839+09:00  INFO 13695 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T00:44:49.050+09:00  INFO 21068 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : Starting SwypBackendApplicationTests using Java 21.0.7 with PID 21068 (started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T00:44:49.051+09:00  INFO 21068 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : The following 1 profile is active: "local"
+2025-04-24T00:44:49.065+09:00 DEBUG 21068 --- [swyp_backend] [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1ecfcbc9
+2025-04-24T00:44:49.522+09:00  INFO 21068 --- [swyp_backend] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T00:44:49.564+09:00  INFO 21068 --- [swyp_backend] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interface.
+2025-04-24T00:44:49.947+09:00  INFO 21068 --- [swyp_backend] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T00:44:50.212+09:00  INFO 21068 --- [swyp_backend] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T00:44:50.245+09:00  INFO 21068 --- [swyp_backend] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T00:44:50.444+09:00  INFO 21068 --- [swyp_backend] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T00:44:50.462+09:00  INFO 21068 --- [swyp_backend] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T00:44:50.817+09:00  INFO 21068 --- [swyp_backend] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e20f4e3
+2025-04-24T00:44:50.819+09:00  INFO 21068 --- [swyp_backend] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T00:44:50.867+09:00  WARN 21068 --- [swyp_backend] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T00:44:50.868+09:00  WARN 21068 --- [swyp_backend] [Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T00:44:51.392+09:00  INFO 21068 --- [swyp_backend] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T00:44:51.472+09:00  INFO 21068 --- [swyp_backend] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:44:51.983+09:00  WARN 21068 --- [swyp_backend] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T00:44:52.007+09:00 DEBUG 21068 --- [swyp_backend] [Test worker] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T00:44:52.141+09:00 DEBUG 21068 --- [swyp_backend] [Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T00:44:52.327+09:00 DEBUG 21068 --- [swyp_backend] [Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T00:44:52.350+09:00 DEBUG 21068 --- [swyp_backend] [Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T00:44:52.465+09:00  INFO 21068 --- [swyp_backend] [Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T00:44:52.555+09:00 DEBUG 21068 --- [swyp_backend] [Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T00:44:52.580+09:00 DEBUG 21068 --- [swyp_backend] [Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T00:44:52.890+09:00  INFO 21068 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : Started SwypBackendApplicationTests in 3.985 seconds (process running for 4.752)
+2025-04-24T00:44:53.264+09:00 DEBUG 21068 --- [swyp_backend] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1ecfcbc9, started on Thu Apr 24 00:44:49 KST 2025
+2025-04-24T00:44:53.267+09:00  INFO 21068 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:44:53.269+09:00  INFO 21068 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T00:44:53.275+09:00  INFO 21068 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T00:45:05.922+09:00  INFO 21113 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : Starting SwypBackendApplicationTests using Java 21.0.7 with PID 21113 (started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T00:45:05.924+09:00  INFO 21113 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : The following 1 profile is active: "local"
+2025-04-24T00:45:05.949+09:00 DEBUG 21113 --- [swyp_backend] [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1ecfcbc9
+2025-04-24T00:45:06.371+09:00  INFO 21113 --- [swyp_backend] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T00:45:06.419+09:00  INFO 21113 --- [swyp_backend] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2025-04-24T00:45:06.691+09:00  INFO 21113 --- [swyp_backend] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T00:45:06.730+09:00  INFO 21113 --- [swyp_backend] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T00:45:06.752+09:00  INFO 21113 --- [swyp_backend] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T00:45:06.920+09:00  INFO 21113 --- [swyp_backend] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T00:45:06.937+09:00  INFO 21113 --- [swyp_backend] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T00:45:07.215+09:00  INFO 21113 --- [swyp_backend] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@540212be
+2025-04-24T00:45:07.217+09:00  INFO 21113 --- [swyp_backend] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T00:45:07.257+09:00  WARN 21113 --- [swyp_backend] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T00:45:07.257+09:00  WARN 21113 --- [swyp_backend] [Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T00:45:07.723+09:00  INFO 21113 --- [swyp_backend] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T00:45:07.784+09:00  INFO 21113 --- [swyp_backend] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:45:08.029+09:00  WARN 21113 --- [swyp_backend] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T00:45:08.053+09:00 DEBUG 21113 --- [swyp_backend] [Test worker] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T00:45:08.142+09:00 DEBUG 21113 --- [swyp_backend] [Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T00:45:08.223+09:00 DEBUG 21113 --- [swyp_backend] [Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T00:45:08.246+09:00 DEBUG 21113 --- [swyp_backend] [Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T00:45:08.323+09:00  INFO 21113 --- [swyp_backend] [Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T00:45:08.343+09:00 DEBUG 21113 --- [swyp_backend] [Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T00:45:08.369+09:00 DEBUG 21113 --- [swyp_backend] [Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T00:45:08.480+09:00  INFO 21113 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : Started SwypBackendApplicationTests in 2.76 seconds (process running for 3.449)
+2025-04-24T00:45:08.855+09:00 DEBUG 21113 --- [swyp_backend] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1ecfcbc9, started on Thu Apr 24 00:45:05 KST 2025
+2025-04-24T00:45:08.858+09:00  INFO 21113 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:45:08.859+09:00  INFO 21113 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T00:45:08.870+09:00  INFO 21113 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T00:45:23.723+09:00  INFO 21317 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : Starting SwypBackendApplicationTests using Java 21.0.7 with PID 21317 (started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T00:45:23.725+09:00  INFO 21317 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : The following 1 profile is active: "local"
+2025-04-24T00:45:23.750+09:00 DEBUG 21317 --- [swyp_backend] [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1ecfcbc9
+2025-04-24T00:45:24.197+09:00  INFO 21317 --- [swyp_backend] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T00:45:24.229+09:00  INFO 21317 --- [swyp_backend] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interface.
+2025-04-24T00:45:24.495+09:00  INFO 21317 --- [swyp_backend] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T00:45:24.540+09:00  INFO 21317 --- [swyp_backend] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T00:45:24.559+09:00  INFO 21317 --- [swyp_backend] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T00:45:25.188+09:00  INFO 21317 --- [swyp_backend] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T00:45:25.215+09:00  INFO 21317 --- [swyp_backend] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T00:45:25.595+09:00  INFO 21317 --- [swyp_backend] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46b21632
+2025-04-24T00:45:25.596+09:00  INFO 21317 --- [swyp_backend] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T00:45:25.629+09:00  WARN 21317 --- [swyp_backend] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T00:45:25.629+09:00  WARN 21317 --- [swyp_backend] [Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T00:45:26.438+09:00  INFO 21317 --- [swyp_backend] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T00:45:26.501+09:00  INFO 21317 --- [swyp_backend] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:45:26.767+09:00  WARN 21317 --- [swyp_backend] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T00:45:26.785+09:00 DEBUG 21317 --- [swyp_backend] [Test worker] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T00:45:26.876+09:00 DEBUG 21317 --- [swyp_backend] [Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T00:45:27.025+09:00 DEBUG 21317 --- [swyp_backend] [Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T00:45:27.047+09:00 DEBUG 21317 --- [swyp_backend] [Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T00:45:27.117+09:00  INFO 21317 --- [swyp_backend] [Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T00:45:27.139+09:00 DEBUG 21317 --- [swyp_backend] [Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T00:45:27.165+09:00 DEBUG 21317 --- [swyp_backend] [Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T00:45:27.311+09:00  INFO 21317 --- [swyp_backend] [Test worker] c.s.backend.SwypBackendApplicationTests  : Started SwypBackendApplicationTests in 3.78 seconds (process running for 4.404)
+2025-04-24T00:45:27.699+09:00 DEBUG 21317 --- [swyp_backend] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1ecfcbc9, started on Thu Apr 24 00:45:23 KST 2025
+2025-04-24T00:45:27.702+09:00  INFO 21317 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:45:27.703+09:00  INFO 21317 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T00:45:27.727+09:00  INFO 21317 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T00:45:38.386+09:00  INFO 21434 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Starting SwypBackendApplication using Java 21.0.7 with PID 21434 (/Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main/build/classes/java/main started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T00:45:38.388+09:00  INFO 21434 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : The following 1 profile is active: "local"
+2025-04-24T00:45:38.908+09:00  INFO 21434 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T00:45:38.941+09:00  INFO 21434 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 1 JPA repository interface.
+2025-04-24T00:45:39.428+09:00  INFO 21434 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T00:45:39.449+09:00  INFO 21434 --- [swyp_backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T00:45:39.450+09:00  INFO 21434 --- [swyp_backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T00:45:39.556+09:00  INFO 21434 --- [swyp_backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T00:45:39.556+09:00  INFO 21434 --- [swyp_backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1142 ms
+2025-04-24T00:45:39.678+09:00  INFO 21434 --- [swyp_backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T00:45:39.720+09:00  INFO 21434 --- [swyp_backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T00:45:39.751+09:00  INFO 21434 --- [swyp_backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T00:45:39.952+09:00  INFO 21434 --- [swyp_backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T00:45:39.969+09:00  INFO 21434 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T00:45:40.226+09:00  INFO 21434 --- [swyp_backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b2b7e3c
+2025-04-24T00:45:40.227+09:00  INFO 21434 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T00:45:40.263+09:00  WARN 21434 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T00:45:40.264+09:00  WARN 21434 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T00:45:40.987+09:00  INFO 21434 --- [swyp_backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T00:45:41.033+09:00  INFO 21434 --- [swyp_backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:45:41.302+09:00  WARN 21434 --- [swyp_backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T00:45:41.318+09:00 DEBUG 21434 --- [swyp_backend] [main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T00:45:41.392+09:00 DEBUG 21434 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T00:45:41.444+09:00 DEBUG 21434 --- [swyp_backend] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T00:45:41.460+09:00 DEBUG 21434 --- [swyp_backend] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T00:45:41.478+09:00  INFO 21434 --- [swyp_backend] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T00:45:41.503+09:00 DEBUG 21434 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T00:45:41.524+09:00 DEBUG 21434 --- [swyp_backend] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T00:45:41.658+09:00  INFO 21434 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T00:45:41.673+09:00  INFO 21434 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Started SwypBackendApplication in 3.97 seconds (process running for 4.217)
+2025-04-24T00:45:42.134+09:00  INFO 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T00:45:42.135+09:00  INFO 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T00:45:42.135+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-04-24T00:45:42.136+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-04-24T00:45:42.136+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-04-24T00:45:42.175+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@49b73e6c
+2025-04-24T00:45:42.178+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@420068a
+2025-04-24T00:45:42.184+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-04-24T00:45:42.184+09:00  INFO 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 49 ms
+2025-04-24T00:45:42.201+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:45:42.201+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:45:42.206+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:45:42.206+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:45:42.206+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:45:42.206+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:45:42.207+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:45:42.207+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:45:42.210+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:45:42.210+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:45:42.211+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:45:42.211+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:45:42.320+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@1ebbd2b7]
+2025-04-24T00:45:42.320+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@705391b8]
+2025-04-24T00:45:42.381+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:45:42.382+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:45:42.388+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:45:42.388+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:45:42.390+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[YkpwDEKb63N331Mmfbd6AEuAucQRfoTdMdnNgHrmg0tr7sm72C41kwAAAAQKDQgeAAABlmNTi5x-jFVpBnvzXw]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:45:42.390+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[YkpwDEKb63N331Mmfbd6AEuAucQRfoTdMdnNgHrmg0tr7sm72C41kwAAAAQKDQgeAAABlmNTi5x-jFVpBnvzXw]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:45:42.535+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 400 BAD_REQUEST
+2025-04-24T00:45:42.549+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:45:42.550+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:45:42.553+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:45:42.554+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2025-04-24T00:45:42.554+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-04-24T00:45:42.563+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T00:45:42.564+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:45:42.669+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:45:42.669+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:45:42.828+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:45:42.829+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T00:45:42.832+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:45:53.670+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:45:53.673+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:45:53.673+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:45:53.674+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:45:53.675+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:45:53.684+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@6198ef34]
+2025-04-24T00:45:53.689+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:45:53.690+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:45:53.690+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[YkpwDEKb63N331Mmfbd6AEuAucQRfoTdMdnNgHrmg0tr7sm72C41kwAAAAQKDQgeAAABlmNTi5x-jFVpBnvzXw]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:45:53.804+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.web.client.RestTemplate              : Response 400 BAD_REQUEST
+2025-04-24T00:45:53.805+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-04-24T00:45:53.806+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2025-04-24T00:45:53.806+09:00 DEBUG 21434 --- [swyp_backend] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-04-24T00:49:58.851+09:00  INFO 21434 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:49:58.889+09:00  INFO 21434 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T00:49:58.951+09:00  INFO 21434 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T00:53:37.550+09:00  INFO 25717 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Starting SwypBackendApplication using Java 21.0.7 with PID 25717 (/Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main/build/classes/java/main started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T00:53:37.552+09:00  INFO 25717 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : The following 1 profile is active: "local"
+2025-04-24T00:53:38.134+09:00  INFO 25717 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T00:53:38.173+09:00  INFO 25717 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2025-04-24T00:53:38.600+09:00  INFO 25717 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T00:53:38.610+09:00  INFO 25717 --- [swyp_backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T00:53:38.610+09:00  INFO 25717 --- [swyp_backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T00:53:38.652+09:00  INFO 25717 --- [swyp_backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T00:53:38.652+09:00  INFO 25717 --- [swyp_backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1059 ms
+2025-04-24T00:53:38.754+09:00  INFO 25717 --- [swyp_backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T00:53:38.788+09:00  INFO 25717 --- [swyp_backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T00:53:38.813+09:00  INFO 25717 --- [swyp_backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T00:53:39.049+09:00  INFO 25717 --- [swyp_backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T00:53:39.068+09:00  INFO 25717 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T00:53:39.424+09:00  INFO 25717 --- [swyp_backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@661db63e
+2025-04-24T00:53:39.426+09:00  INFO 25717 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T00:53:39.471+09:00  WARN 25717 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T00:53:39.471+09:00  WARN 25717 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T00:53:40.029+09:00  INFO 25717 --- [swyp_backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T00:53:40.113+09:00  INFO 25717 --- [swyp_backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:53:40.448+09:00  WARN 25717 --- [swyp_backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T00:53:40.486+09:00 DEBUG 25717 --- [swyp_backend] [main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T00:53:40.614+09:00 DEBUG 25717 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T00:53:40.697+09:00 DEBUG 25717 --- [swyp_backend] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T00:53:40.715+09:00 DEBUG 25717 --- [swyp_backend] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T00:53:40.745+09:00  INFO 25717 --- [swyp_backend] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T00:53:40.769+09:00 DEBUG 25717 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T00:53:40.792+09:00 DEBUG 25717 --- [swyp_backend] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T00:53:40.945+09:00  INFO 25717 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T00:53:40.952+09:00  INFO 25717 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Started SwypBackendApplication in 3.7 seconds (process running for 4.005)
+2025-04-24T00:53:51.232+09:00  INFO 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T00:53:51.233+09:00  INFO 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T00:53:51.234+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-04-24T00:53:51.234+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-04-24T00:53:51.234+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-04-24T00:53:51.235+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@79e33802
+2025-04-24T00:53:51.235+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4d4337f9
+2025-04-24T00:53:51.236+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-04-24T00:53:51.236+09:00  INFO 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-24T00:53:51.249+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:53:51.249+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T00:53:51.253+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:53:51.253+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:53:51.253+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:53:51.253+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T00:53:51.254+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:53:51.254+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T00:53:51.255+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:53:51.255+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T00:53:51.257+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:53:51.257+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T00:53:51.321+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@4ac8d017]
+2025-04-24T00:53:51.321+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@a293032]
+2025-04-24T00:53:51.379+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:53:51.379+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T00:53:51.383+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:53:51.383+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:53:51.384+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[zAWJaF99wr6UbkwJb8NQr1lH_VtD2v4W0_5oEe7yKw2dec6_6uWN8wAAAAQKFxTuAAABlmNbAiMBl6J2VXah6g]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:53:51.384+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[zAWJaF99wr6UbkwJb8NQr1lH_VtD2v4W0_5oEe7yKw2dec6_6uWN8wAAAAQKFxTuAAABlmNbAiMBl6J2VXah6g]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T00:53:51.633+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:53:51.633+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:53:51.636+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:53:51.636+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:53:51.712+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T00:53:51.712+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T00:53:51.713+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:53:51.713+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T00:53:51.813+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:53:51.814+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:53:51.815+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T00:53:51.815+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T00:53:52.093+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:53:52.093+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T00:53:52.094+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T00:53:52.094+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T00:53:52.100+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:53:52.100+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T00:57:04.484+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/token/reissue
+2025-04-24T00:57:04.488+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:57:04.492+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-6] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-04-24T00:57:04.508+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-04-24T00:57:04.508+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T00:57:04.509+09:00 DEBUG 25717 --- [swyp_backend] [http-nio-8080-exec-6] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-04-24T00:58:37.847+09:00  INFO 25717 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T00:58:37.891+09:00  INFO 25717 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T00:58:37.940+09:00  INFO 25717 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T01:04:34.821+09:00  INFO 31676 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Starting SwypBackendApplication using Java 21.0.7 with PID 31676 (/Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main/build/classes/java/main started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T01:04:34.823+09:00  INFO 31676 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : The following 1 profile is active: "local"
+2025-04-24T01:04:35.541+09:00  INFO 31676 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T01:04:35.577+09:00  INFO 31676 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+2025-04-24T01:04:35.921+09:00  INFO 31676 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T01:04:35.929+09:00  INFO 31676 --- [swyp_backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T01:04:35.929+09:00  INFO 31676 --- [swyp_backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T01:04:35.965+09:00  INFO 31676 --- [swyp_backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T01:04:35.965+09:00  INFO 31676 --- [swyp_backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1113 ms
+2025-04-24T01:04:36.060+09:00  INFO 31676 --- [swyp_backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T01:04:36.091+09:00  INFO 31676 --- [swyp_backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T01:04:36.108+09:00  INFO 31676 --- [swyp_backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T01:04:36.278+09:00  INFO 31676 --- [swyp_backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T01:04:36.293+09:00  INFO 31676 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T01:04:36.604+09:00  INFO 31676 --- [swyp_backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5cf2f5d6
+2025-04-24T01:04:36.608+09:00  INFO 31676 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T01:04:36.657+09:00  WARN 31676 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T01:04:36.658+09:00  WARN 31676 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T01:04:37.105+09:00  INFO 31676 --- [swyp_backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T01:04:37.167+09:00  INFO 31676 --- [swyp_backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T01:04:37.393+09:00  WARN 31676 --- [swyp_backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T01:04:37.408+09:00 DEBUG 31676 --- [swyp_backend] [main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T01:04:37.482+09:00 DEBUG 31676 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T01:04:37.524+09:00 DEBUG 31676 --- [swyp_backend] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T01:04:37.537+09:00 DEBUG 31676 --- [swyp_backend] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T01:04:37.555+09:00  INFO 31676 --- [swyp_backend] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T01:04:37.576+09:00 DEBUG 31676 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T01:04:37.595+09:00 DEBUG 31676 --- [swyp_backend] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T01:04:37.692+09:00  INFO 31676 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T01:04:37.699+09:00  INFO 31676 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Started SwypBackendApplication in 3.127 seconds (process running for 3.422)
+2025-04-24T01:04:39.987+09:00  INFO 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T01:04:39.987+09:00  INFO 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T01:04:39.988+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-04-24T01:04:39.988+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-04-24T01:04:39.988+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-04-24T01:04:39.989+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1f138b74
+2025-04-24T01:04:39.989+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@1e6f7c25
+2025-04-24T01:04:39.989+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-04-24T01:04:39.989+09:00  INFO 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-24T01:04:40.006+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/v1/auth/kakao
+2025-04-24T01:04:40.006+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing OPTIONS /api/v1/auth/kakao
+2025-04-24T01:04:40.030+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:04:40.030+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:04:40.031+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/v1/auth/kakao
+2025-04-24T01:04:40.031+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured OPTIONS /api/v1/auth/kakao
+2025-04-24T01:04:40.032+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/auth/kakao", parameters={}
+2025-04-24T01:04:40.032+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/auth/kakao", parameters={}
+2025-04-24T01:04:40.033+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T01:04:40.033+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T01:04:40.042+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T01:04:40.042+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T01:04:40.048+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T01:04:40.048+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T01:04:40.049+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:04:40.049+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:04:40.049+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T01:04:40.049+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T01:04:40.049+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T01:04:40.049+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T01:04:40.050+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T01:04:40.050+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T01:04:40.050+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T01:04:40.050+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T01:04:40.094+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@10d30dce]
+2025-04-24T01:04:40.094+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@c822895]
+2025-04-24T01:04:40.149+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T01:04:40.149+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T01:04:40.155+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T01:04:40.155+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T01:04:40.156+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[Ede4VR7x2lBB8vJUwa3urw14EGmmXt9lnDDfpwqT2FGTPmdZKgrJugAAAAQKDSAbAAABlmNk6WaIenTzhLqDRQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T01:04:40.156+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[Ede4VR7x2lBB8vJUwa3urw14EGmmXt9lnDDfpwqT2FGTPmdZKgrJugAAAAQKDSAbAAABlmNk6WaIenTzhLqDRQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T01:04:40.310+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T01:04:40.311+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T01:04:40.314+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T01:04:40.315+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T01:04:40.322+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T01:04:40.322+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T01:04:40.322+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T01:04:40.322+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T01:04:40.403+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T01:04:40.403+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T01:04:40.403+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T01:04:40.403+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T01:04:40.566+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T01:04:40.566+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T01:04:40.567+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T01:04:40.567+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T01:04:40.570+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T01:04:40.570+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T01:05:30.746+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/token/reissue
+2025-04-24T01:05:30.748+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:05:30.755+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-10] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-04-24T01:05:30.766+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /error
+2025-04-24T01:05:30.767+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:05:30.767+09:00 DEBUG 31676 --- [swyp_backend] [http-nio-8080-exec-10] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+2025-04-24T01:07:35.033+09:00  INFO 31676 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T01:07:35.057+09:00  INFO 31676 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T01:07:35.135+09:00  INFO 31676 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T01:09:39.467+09:00  INFO 34493 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Starting SwypBackendApplication using Java 21.0.7 with PID 34493 (/Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main/build/classes/java/main started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T01:09:39.468+09:00  INFO 34493 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : The following 1 profile is active: "local"
+2025-04-24T01:09:39.962+09:00  INFO 34493 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T01:09:39.997+09:00  INFO 34493 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+2025-04-24T01:09:40.343+09:00  INFO 34493 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T01:09:40.351+09:00  INFO 34493 --- [swyp_backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T01:09:40.352+09:00  INFO 34493 --- [swyp_backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T01:09:40.392+09:00  INFO 34493 --- [swyp_backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T01:09:40.392+09:00  INFO 34493 --- [swyp_backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 897 ms
+2025-04-24T01:09:40.482+09:00  INFO 34493 --- [swyp_backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T01:09:40.513+09:00  INFO 34493 --- [swyp_backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T01:09:40.530+09:00  INFO 34493 --- [swyp_backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T01:09:40.707+09:00  INFO 34493 --- [swyp_backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T01:09:40.726+09:00  INFO 34493 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T01:09:41.055+09:00  INFO 34493 --- [swyp_backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70ee9d31
+2025-04-24T01:09:41.056+09:00  INFO 34493 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T01:09:41.101+09:00  WARN 34493 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T01:09:41.102+09:00  WARN 34493 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T01:09:41.520+09:00  INFO 34493 --- [swyp_backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T01:09:41.580+09:00  INFO 34493 --- [swyp_backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T01:09:41.809+09:00  WARN 34493 --- [swyp_backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T01:09:41.827+09:00 DEBUG 34493 --- [swyp_backend] [main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T01:09:41.898+09:00 DEBUG 34493 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T01:09:41.941+09:00 DEBUG 34493 --- [swyp_backend] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T01:09:41.957+09:00 DEBUG 34493 --- [swyp_backend] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T01:09:41.972+09:00  INFO 34493 --- [swyp_backend] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T01:09:41.992+09:00 DEBUG 34493 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T01:09:42.013+09:00 DEBUG 34493 --- [swyp_backend] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T01:09:42.166+09:00  INFO 34493 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T01:09:42.173+09:00  INFO 34493 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Started SwypBackendApplication in 3.191 seconds (process running for 3.477)
+2025-04-24T01:09:49.958+09:00  INFO 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T01:09:49.959+09:00  INFO 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T01:09:49.960+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-04-24T01:09:49.960+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-04-24T01:09:49.960+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-04-24T01:09:49.963+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6aff157e
+2025-04-24T01:09:49.964+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@55e02661
+2025-04-24T01:09:49.964+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-04-24T01:09:49.964+09:00  INFO 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-04-24T01:09:49.978+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T01:09:49.978+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/kakao
+2025-04-24T01:09:49.984+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:09:49.984+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:09:49.985+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T01:09:49.985+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.session.SessionManagementFilter  : Request requested invalid session id 1E0BCF9FFA4D018755D512475FF8806B
+2025-04-24T01:09:49.986+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T01:09:49.986+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/kakao
+2025-04-24T01:09:49.988+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T01:09:49.988+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/kakao", parameters={}
+2025-04-24T01:09:49.990+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T01:09:49.990+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#kakaoLogin(SocialLoginRequest)
+2025-04-24T01:09:50.062+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@4babaa99]
+2025-04-24T01:09:50.062+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.swyp.backend.auth.dto.SocialLoginRequest@748f2347]
+2025-04-24T01:09:50.106+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T01:09:50.106+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP POST https://kauth.kakao.com/oauth/token
+2025-04-24T01:09:50.110+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T01:09:50.110+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T01:09:50.110+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[ro1bBoqbIa9xnrs7KAp9ck5ej7LQKeNutvytlseC67-ouZsfCue5cAAAAAQKFxBvAAABlmNppC4h5oEAb4_jFQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T01:09:50.110+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], client_id=[ee8929f53726a471071df5f4eb8290df], redirect_uri=[http://localhost:3000/oauth/callback/kakao], code=[ro1bBoqbIa9xnrs7KAp9ck5ej7LQKeNutvytlseC67-ouZsfCue5cAAAAAQKFxBvAAABlmNppC4h5oEAb4_jFQ]}] as "application/x-www-form-urlencoded;charset=utf-8"
+2025-04-24T01:09:50.258+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T01:09:50.259+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T01:09:50.268+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T01:09:50.268+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T01:09:50.270+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T01:09:50.270+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : HTTP POST https://kapi.kakao.com/v2/user/me
+2025-04-24T01:09:50.270+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T01:09:50.270+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2025-04-24T01:09:50.343+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T01:09:50.343+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T01:09:50.347+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Response 200 OK
+2025-04-24T01:09:50.347+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=UTF-8"
+2025-04-24T01:09:50.513+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T01:09:50.513+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2025-04-24T01:09:50.513+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T01:09:50.513+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T01:09:50.517+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T01:09:50.517+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T01:10:18.459+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/token/reissue
+2025-04-24T01:10:18.462+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:10:18.463+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/token/reissue
+2025-04-24T01:10:18.463+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/token/reissue", parameters={}
+2025-04-24T01:10:18.464+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#reissue(HttpServletRequest)
+2025-04-24T01:10:18.484+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-04-24T01:10:18.485+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T01:10:18.486+09:00 DEBUG 34493 --- [swyp_backend] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T01:12:44.339+09:00  INFO 34493 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T01:12:44.348+09:00  INFO 34493 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T01:12:44.408+09:00  INFO 34493 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-24T01:13:08.415+09:00  INFO 36421 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Starting SwypBackendApplication using Java 21.0.7 with PID 36421 (/Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main/build/classes/java/main started by jangminji in /Users/jangminji/Documents/장민지/SWYP9/SWYP_BACK-main)
+2025-04-24T01:13:08.417+09:00  INFO 36421 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : The following 1 profile is active: "local"
+2025-04-24T01:13:08.858+09:00  INFO 36421 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-24T01:13:08.891+09:00  INFO 36421 --- [swyp_backend] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 1 JPA repository interface.
+2025-04-24T01:13:09.208+09:00  INFO 36421 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-04-24T01:13:09.218+09:00  INFO 36421 --- [swyp_backend] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-24T01:13:09.218+09:00  INFO 36421 --- [swyp_backend] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-24T01:13:09.277+09:00  INFO 36421 --- [swyp_backend] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-24T01:13:09.277+09:00  INFO 36421 --- [swyp_backend] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 840 ms
+2025-04-24T01:13:09.374+09:00  INFO 36421 --- [swyp_backend] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-24T01:13:09.408+09:00  INFO 36421 --- [swyp_backend] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-04-24T01:13:09.425+09:00  INFO 36421 --- [swyp_backend] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-24T01:13:09.600+09:00  INFO 36421 --- [swyp_backend] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-24T01:13:09.615+09:00  INFO 36421 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-24T01:13:09.899+09:00  INFO 36421 --- [swyp_backend] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4fbe486c
+2025-04-24T01:13:09.900+09:00  INFO 36421 --- [swyp_backend] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-24T01:13:09.946+09:00  WARN 36421 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-24T01:13:09.946+09:00  WARN 36421 --- [swyp_backend] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-04-24T01:13:10.530+09:00  INFO 36421 --- [swyp_backend] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-24T01:13:10.599+09:00  INFO 36421 --- [swyp_backend] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T01:13:11.015+09:00  WARN 36421 --- [swyp_backend] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-24T01:13:11.030+09:00 DEBUG 36421 --- [swyp_backend] [main] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-04-24T01:13:11.111+09:00 DEBUG 36421 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-04-24T01:13:11.160+09:00 DEBUG 36421 --- [swyp_backend] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-04-24T01:13:11.178+09:00 DEBUG 36421 --- [swyp_backend] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-04-24T01:13:11.193+09:00  INFO 36421 --- [swyp_backend] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-04-24T01:13:11.213+09:00 DEBUG 36421 --- [swyp_backend] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-04-24T01:13:11.232+09:00 DEBUG 36421 --- [swyp_backend] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-04-24T01:13:11.413+09:00  INFO 36421 --- [swyp_backend] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-04-24T01:13:11.423+09:00  INFO 36421 --- [swyp_backend] [main] c.swyp.backend.SwypBackendApplication    : Started SwypBackendApplication in 3.273 seconds (process running for 3.493)
+2025-04-24T01:14:07.683+09:00  INFO 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-24T01:14:07.683+09:00  INFO 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-24T01:14:07.684+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-04-24T01:14:07.684+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-04-24T01:14:07.684+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-04-24T01:14:07.687+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1cc878e6
+2025-04-24T01:14:07.687+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@73eaae1e
+2025-04-24T01:14:07.687+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-04-24T01:14:07.688+09:00  INFO 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-04-24T01:14:07.701+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /api/v1/auth/token/reissue
+2025-04-24T01:14:07.706+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2025-04-24T01:14:07.707+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /api/v1/auth/token/reissue
+2025-04-24T01:14:07.709+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/token/reissue", parameters={}
+2025-04-24T01:14:07.710+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.swyp.backend.auth.controller.AuthController#reissue(HttpServletRequest)
+2025-04-24T01:14:07.908+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2025-04-24T01:14:07.909+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [KakaoTokenResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MjI0ODYxMzM5IiwibmFtZSI6IuyepeuvvOyn (truncated)...]
+2025-04-24T01:14:07.914+09:00 DEBUG 36421 --- [swyp_backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-04-24T01:14:33.297+09:00  INFO 36421 --- [swyp_backend] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-24T01:14:33.302+09:00  INFO 36421 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-24T01:14:33.318+09:00  INFO 36421 --- [swyp_backend] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
