@@ -38,3 +38,6 @@ out/
 
 ### Test Code ###
 src/test/
+
+### Local File ###
+src/main/resources/application-local.properties

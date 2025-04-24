@@ -32,7 +32,7 @@ public class AuthController {
             // refreshToken → HttpOnly 쿠키
             ResponseCookie refreshCookie = ResponseCookie.from("refreshToken", jwt.getRefreshToken())
                     .httpOnly(true)
-                    .secure(false) // test용은 false처리
+                    .secure(false) // test
                     .path("/")
                     .sameSite("None")
                     .maxAge(60 * 60 * 24 * 15) // 15일
