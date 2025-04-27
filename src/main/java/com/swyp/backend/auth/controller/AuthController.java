@@ -6,6 +6,7 @@ import com.swyp.backend.auth.dto.KakaoUserDTO;
 import com.swyp.backend.auth.dto.SocialLoginRequest;
 import com.swyp.backend.auth.security.JwtTokenProvider;
 import com.swyp.backend.auth.service.KakaoService;
+import feign.FeignException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -55,15 +56,31 @@ public class AuthController {
     public ResponseEntity<KakaoTokenResponse> reissue(HttpServletRequest request) {
         String refreshToken = extractFromCookie(request);
         if (refreshToken == null) {
-            System.out.println("cookie isnull");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
         try {
             KakaoTokenResponse newTokens = jwtTokenProvider.reissueToken(refreshToken);
             return ResponseEntity.ok(newTokens);
         } catch (Exception e) {
-            System.out.println("diff error");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+    @PostMapping("/unlink")
+    public ResponseEntity<?> unlinkKakaoUser(@RequestHeader("Authorization") String authorizationHeader) {
+        try {
+            String jwtAccessToken = authorizationHeader.replace("Bearer ","");
+            kakaoService.unlinkUser(jwtAccessToken);
+            return ResponseEntity.ok().body("탈퇴 성공");
+        } catch (FeignException e) { // Kakao API 요청하다 실패했을 때
+            // FeignException은 statusCode + responseBody를 가지고 있음
+            System.out.println("카카오 API 실패 상태코드: " + e.status());
+            System.out.println("카카오 API 실패 응답 내용: " + e.contentUTF8());
+
+            return ResponseEntity.status(e.status()).body("Kakao API 실패: " + e.contentUTF8());
+
+        } catch (Exception e) { // 그 외 일반적인 예외
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("탈퇴 실패: " + e.getMessage());
         }
     }
 

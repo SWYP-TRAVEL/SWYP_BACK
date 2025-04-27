@@ -1,10 +1,16 @@
 package com.swyp.backend.auth.service;
 
+import com.swyp.backend.auth.client.KakaoFeignClient;
 import com.swyp.backend.auth.dto.KakaoTokenResponse;
+import com.swyp.backend.auth.dto.KakaoUnlinkResponse;
 import com.swyp.backend.auth.dto.KakaoUserDTO;
 import com.swyp.backend.auth.security.JwtTokenProvider;
 import com.swyp.backend.user.entity.User;
+import com.swyp.backend.user.repository.UserRepository;
 import com.swyp.backend.user.service.UserService;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
@@ -21,10 +27,16 @@ import org.springframework.web.client.RestTemplate;
 @Service
 @RequiredArgsConstructor
 public class KakaoService {
+    @Value("${custom.jwt.secretKey}")
+    private String secretKey;
+    @Value("${kakao.admin.key}")
+    private String adminKey;
     private final static String KAKAO_AUTH_URI="https://kauth.kakao.com/oauth/token";
     private final static String KAKAO_API_URI = "https://kapi.kakao.com/v2/user/me";
     private final JwtTokenProvider jwtTokenProvider;
     private final UserService userService;
+    private final KakaoFeignClient kakaoFeignClient;
+    private final UserRepository userRepository;
     @Value("${kakao.client.id}")
     private String KAKAO_CLIENT_ID;
     @Value("${kakao.redirect.url}")
@@ -105,5 +117,20 @@ public class KakaoService {
                 .refreshToken(jwt.getRefreshToken())
                 .expiresIn(jwt.getExpiresIn())
                 .build();
+    }
+    @Transactional
+    public void unlinkUser(String accessToken) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(secretKey)
+                .parseClaimsJws(accessToken.replace("Bearer ", ""))
+                .getBody();
+        String kakaoId = claims.getSubject();
+        String adminKeyAuthorization = "KakaoAK " + adminKey;
+        KakaoUnlinkResponse response = kakaoFeignClient.unlinkUser(
+                adminKeyAuthorization,
+                "user_id",
+                kakaoId
+        );
+        userRepository.deleteByKakaoId(Long.valueOf(kakaoId));
     }
 }

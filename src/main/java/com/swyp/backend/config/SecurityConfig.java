@@ -22,7 +22,8 @@ public class SecurityConfig {
             "/swagger-ui/**",
             "/v3/api-docs/**",
             "/api/v1/auth/kakao",
-            "/api/v1/auth/token/reissue"
+            "/api/v1/auth/token/reissue",
+            "/api/v1/auth/token/unlink"
     };
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
