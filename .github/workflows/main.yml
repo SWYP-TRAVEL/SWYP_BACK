@@ -38,6 +38,12 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+        env:
+          KAKAO_API_KEY: ${{secrets.KAKAO_API_KEY}}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          JWT_SECRET_KEY: ${{secrets.JWT_SECRET_KEY}}
+
 
       - name: Build Docker image # repo 이름이 소문자여야됨.
         run: |
