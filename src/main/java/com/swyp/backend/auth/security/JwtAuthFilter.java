@@ -30,7 +30,6 @@ public class JwtAuthFilter extends GenericFilterBean {
             filterChain.doFilter(request, response);
             return;
         }
-
         String jwt = resolveToken(httpRequest);
         if (StringUtils.hasText(jwt) && jwtTokenProvider.validateToken(jwt)) {
             Authentication authentication = jwtAuthentication.getAuthentication(jwt);

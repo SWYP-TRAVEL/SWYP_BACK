@@ -120,17 +120,21 @@ public class KakaoService {
     }
     @Transactional
     public void unlinkUser(String accessToken) {
+        System.out.println("unlinkUser accessToken: "+ accessToken);
         Claims claims = Jwts.parser()
                 .setSigningKey(secretKey)
                 .parseClaimsJws(accessToken.replace("Bearer ", ""))
                 .getBody();
-        String kakaoId = claims.getSubject();
+        System.out.println("claims"+claims);
+        Long kakaoId = Long.valueOf(claims.getSubject());
+        System.out.println("kakaoId"+kakaoId);
         String adminKeyAuthorization = "KakaoAK " + adminKey;
-        KakaoUnlinkResponse response = kakaoFeignClient.unlinkUser(
-                adminKeyAuthorization,
-                "user_id",
-                kakaoId
-        );
-        userRepository.deleteByKakaoId(Long.valueOf(kakaoId));
+        System.out.println("adminKeyAuthorization: " + adminKeyAuthorization);
+//        KakaoUnlinkResponse response = kakaoFeignClient.unlinkUser(
+//                adminKeyAuthorization,
+//                "user_id",
+//                kakaoId
+//        );
+//        userRepository.deleteByKakaoId(Long.valueOf(kakaoId));
     }
 }

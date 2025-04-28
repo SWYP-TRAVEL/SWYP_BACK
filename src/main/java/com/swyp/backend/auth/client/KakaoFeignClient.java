@@ -13,7 +13,7 @@ public interface KakaoFeignClient {
     KakaoUnlinkResponse unlinkUser(
             @RequestHeader("Authorization") String adminKeyAuthorization,
             @RequestParam("target_id_type") String targetIdType,
-            @RequestParam("target_id") String targetId
+            @RequestParam("target_id") Long targetId
     );
 }
 
