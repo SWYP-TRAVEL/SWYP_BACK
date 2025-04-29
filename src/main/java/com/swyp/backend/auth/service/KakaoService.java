@@ -71,8 +71,6 @@ public class KakaoService {
         String refreshToken = (String) json.get("refresh_token");
         Object expires = json.get("expires_in");
         Long expiresIn = ((Number) expires).longValue();
-
-
         return new KakaoTokenResponse(accessToken, refreshToken, expiresIn);
     }
 
@@ -118,6 +116,13 @@ public class KakaoService {
                 .expiresIn(jwt.getExpiresIn())
                 .build();
     }
+    public String extractKakaoIdFromJwt(String jwt) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(secretKey)
+                .parseClaimsJws(jwt.replace("Bearer ", ""))
+                .getBody();
+        return claims.getSubject();
+    }
     @Transactional
     public void unlinkUser(String accessToken) {
         System.out.println("unlinkUser accessToken: "+ accessToken);
@@ -130,11 +135,11 @@ public class KakaoService {
         System.out.println("kakaoId"+kakaoId);
         String adminKeyAuthorization = "KakaoAK " + adminKey;
         System.out.println("adminKeyAuthorization: " + adminKeyAuthorization);
-//        KakaoUnlinkResponse response = kakaoFeignClient.unlinkUser(
-//                adminKeyAuthorization,
-//                "user_id",
-//                kakaoId
-//        );
-//        userRepository.deleteByKakaoId(Long.valueOf(kakaoId));
+        KakaoUnlinkResponse response = kakaoFeignClient.unlinkUser(
+                adminKeyAuthorization,
+                "user_id",
+                kakaoId
+        );
+        userRepository.deleteByKakaoId(Long.valueOf(kakaoId));
     }
 }

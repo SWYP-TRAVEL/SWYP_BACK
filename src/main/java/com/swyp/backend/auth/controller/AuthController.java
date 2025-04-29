@@ -68,19 +68,13 @@ public class AuthController {
     @PostMapping("/unlink")
     public ResponseEntity<?> unlinkKakaoUser(@RequestHeader("Authorization") String authorizationHeader) {
         try {
-            System.out.println("authorizationHeader 출력"+authorizationHeader);
             String jwtAccessToken = authorizationHeader.replace("Bearer ","");
-            System.out.println("jwtAccessToken:"+jwtAccessToken);
             kakaoService.unlinkUser(jwtAccessToken);
             return ResponseEntity.ok().body("탈퇴 성공");
         } catch (FeignException e) { // Kakao API 요청하다 실패했을 때
-            // FeignException은 statusCode + responseBody를 가지고 있음
-            System.out.println("카카오 API 실패 상태코드: " + e.status());
-            System.out.println("카카오 API 실패 응답 내용: " + e.contentUTF8());
-
-            return ResponseEntity.status(e.status()).body("Kakao API 실패: " + e.contentUTF8());
-
-        } catch (Exception e) { // 그 외 일반적인 예외
+            // FeignException은 statusCode + responseBody를 가짐
+            return ResponseEntity.status(e.status()).body("Kakao API에 unlink 요청 실패: " + e.contentUTF8());
+        } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(500).body("탈퇴 실패: " + e.getMessage());
         }
