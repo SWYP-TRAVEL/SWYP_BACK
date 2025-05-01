@@ -11,11 +11,12 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, SWYP_BACK, backend]
     permissions:
       contents: read
       packages: write
@@ -37,7 +38,13 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build -x test
+        env:
+          KAKAO_API_KEY: ${{secrets.KAKAO_API_KEY}}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          JWT_SECRET_KEY: ${{secrets.JWT_SECRET_KEY}}
+
 
       - name: Build Docker image # repo 이름이 소문자여야됨.
         run: |
@@ -59,6 +66,3 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: ~/deploy.sh
-
-      - name: Start containers
-        run: docker-compose up -d --build
