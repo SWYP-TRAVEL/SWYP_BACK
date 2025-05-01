@@ -42,6 +42,7 @@ public class AuthController {
             KakaoTokenResponse responseBody = KakaoTokenResponse.builder()
                     .accessToken(jwt.getAccessToken())
                     .expiresIn(jwt.getExpiresIn())
+                    .userName(jwt.getUserName())
                     .build();
 
             return ResponseEntity.ok()

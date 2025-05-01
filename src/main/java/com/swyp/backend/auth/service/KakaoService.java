@@ -71,7 +71,12 @@ public class KakaoService {
         String refreshToken = (String) json.get("refresh_token");
         Object expires = json.get("expires_in");
         Long expiresIn = ((Number) expires).longValue();
-        return new KakaoTokenResponse(accessToken, refreshToken, expiresIn);
+        return KakaoTokenResponse.builder()
+                .accessToken(accessToken)
+                .refreshToken(refreshToken)
+                .expiresIn(expiresIn)
+                .build();
+
     }
 
     public KakaoUserDTO getUserInfoWithToken(String accessToken) throws Exception{
@@ -114,6 +119,7 @@ public class KakaoService {
                 .accessToken(jwt.getAccessToken())
                 .refreshToken(jwt.getRefreshToken())
                 .expiresIn(jwt.getExpiresIn())
+                .userName(kakaoUser.getName())
                 .build();
     }
     public String extractKakaoIdFromJwt(String jwt) {
