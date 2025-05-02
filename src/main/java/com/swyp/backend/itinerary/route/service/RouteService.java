@@ -46,11 +46,8 @@ public class RouteService {
     }
 
     private RouteTime saveRouteTime(AttractionDto start, AttractionDto end) {
-        Coordinates startCoordinates = mapApiService.getCoordinates(start.getAddress());
-        Coordinates endCoordinates = mapApiService.getCoordinates(end.getAddress());
-
-        long walkingTime = mapApiService.getWalkingTime(startCoordinates, endCoordinates);
-        long drivingTime = mapApiService.getDrivingTime(startCoordinates, endCoordinates);
+        long walkingTime = mapApiService.getWalkingTime(start.getAddress(), end.getAddress());
+        long drivingTime = mapApiService.getDrivingTime(start.getAddress(), end.getAddress());
 
         RouteTime entity = RouteTime.builder()
                         .startAttractionId(start.getId())

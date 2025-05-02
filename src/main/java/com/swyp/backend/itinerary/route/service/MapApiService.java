@@ -8,35 +8,72 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-@Service
-public class MapApiService {
+import java.util.HashMap;
+import java.util.Map;
 
-    private final String apiKey;
-    private final String apiWalkingUrl;
-    private final String apiDrivingUrl;
+@Service
+public class MapApiService {//webflux 로?
+
+    private final String tmapApiKey;
+    private final String tmapApiWalkingUrl;
+    private final String tmapApiDrivingUrl;
+    private final String kakaoCoordinatesUrl;
+    private final String kakaoApiKey;
+
     private final RestTemplate restTemplate = new RestTemplate();
 
     @Autowired
     public MapApiService(
-            @Value("${tmap.api.key}") String apiKey
-            , @Value("${tmap.api.url.walking}") String apiWalkingUrl
-            , @Value("${tmap.api.url.driving}") String apiDrivingUrl) {
-        this.apiKey = apiKey;
-        this.apiWalkingUrl = apiWalkingUrl;
-        this.apiDrivingUrl = apiDrivingUrl;
+            @Value("${tmap.api.key}") String tmapApiKey
+            , @Value("${tmap.api.url.walking}") String tmapApiWalkingUrl
+            , @Value("${tmap.api.url.driving}") String tmapApiDrivingUrl
+            , @Value("${kakao.map.coordinates.url}") String kakaoCoordinatesUrl
+            , @Value("${kakao.client.id}") String kakaoApiKey) {
+        this.tmapApiKey = tmapApiKey;
+        this.tmapApiWalkingUrl = tmapApiWalkingUrl;
+        this.tmapApiDrivingUrl = tmapApiDrivingUrl;
+        this.kakaoCoordinatesUrl = kakaoCoordinatesUrl;
+        this.kakaoApiKey = kakaoApiKey;
     }
 
 
+    public Integer getWalkingTime(String start, String end){
+        return getWalkingTime(getCoordinates(start), getCoordinates(end));
+    }
+
+    public Integer getDrivingTime(String start, String end){
+        return getDrivingTime(getCoordinates(start), getCoordinates(end));
+    }
+
     public Integer getWalkingTime(Coordinates start, Coordinates end){
-        return sendTmapRequest(apiWalkingUrl, start, end);
+        return sendTmapRequest(tmapApiWalkingUrl, start, end);
     }
 
     public Integer getDrivingTime(Coordinates start, Coordinates end){
-        return sendTmapRequest(apiDrivingUrl, start, end);
+        return sendTmapRequest(tmapApiDrivingUrl, start, end);
     }
 
-    public Coordinates getCoordinates(String address){
-        return null;
+    public Coordinates getCoordinates(String address){ //코드 별로
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "KakaoAK "+kakaoApiKey);
+
+        Map<String, String> uriVariables = new HashMap<>();
+        uriVariables.put("query", address);
+
+
+        HttpEntity<String> entity = new HttpEntity<>(headers);
+        JsonNode response = restTemplate.exchange(
+                kakaoCoordinatesUrl,
+                HttpMethod.GET,
+                entity,
+                JsonNode.class,
+                uriVariables
+        ).getBody();
+
+        double latitude = response.get("documents").get(0).get("x").asDouble();
+        double longitude = response.get("documents").get(0).get("y").asDouble();
+
+        return new Coordinates(latitude, longitude);
     }
 
     private Integer sendTmapRequest(String url, Coordinates start, Coordinates end) {
@@ -51,7 +88,7 @@ public class MapApiService {
 
     private HttpHeaders setHeader(){
         HttpHeaders headers = new HttpHeaders();
-        headers.set("appKey", apiKey);
+        headers.set("appKey", tmapApiKey);
         headers.setContentType(MediaType.APPLICATION_JSON);
         return headers;
     }
