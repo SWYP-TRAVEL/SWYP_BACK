@@ -1,14 +1,10 @@
 package com.swyp.backend.auth.controller;
-
-
 import com.swyp.backend.auth.dto.KakaoTokenResponse;
-import com.swyp.backend.auth.dto.KakaoUserDTO;
 import com.swyp.backend.auth.dto.SocialLoginRequest;
 import com.swyp.backend.auth.security.JwtTokenProvider;
 import com.swyp.backend.auth.service.KakaoService;
 import feign.FeignException;
 import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -17,7 +13,6 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor

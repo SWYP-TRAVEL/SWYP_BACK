@@ -4,6 +4,7 @@ package com.swyp.backend.Itinerary.entity;
 import com.swyp.backend.Itinerary.enums.AttractionType;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name="attraction")
+@ToString(exclude = "dailySchedules")
 public class Attraction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

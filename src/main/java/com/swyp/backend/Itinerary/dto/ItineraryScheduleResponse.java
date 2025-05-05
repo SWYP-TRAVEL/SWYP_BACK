@@ -1,5 +1,4 @@
 package com.swyp.backend.Itinerary.dto;
-import com.swyp.backend.Itinerary.entity.Attraction;
 import com.swyp.backend.Itinerary.enums.AttractionType;
 import lombok.AllArgsConstructor;
 import lombok.Data;

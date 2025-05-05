@@ -1,5 +1,9 @@
 package com.swyp.backend.auth.security;
-import jakarta.servlet.*;
+
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -8,7 +12,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.filter.GenericFilterBean;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -18,7 +21,7 @@ public class JwtAuthFilter extends GenericFilterBean {
     private static final List<String> skipPaths = List.of(
             "/api/v1/auth/kakao",
             "/api/v1/auth/token/reissue",
-            "/api/v1/itinerary/**"
+            "/api/v1/itinerary/lists/**"
     );
 
     @Override
