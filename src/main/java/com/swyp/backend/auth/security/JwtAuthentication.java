@@ -26,16 +26,14 @@ public class JwtAuthentication {
     public Authentication getAuthentication(String jwt) {
         try {
             Long kakaoId = Long.valueOf(kakaoService.extractKakaoIdFromJwt(jwt));
-            Optional<User> userOptional = userRepository.findByKakaoId(kakaoId);
-            if (userOptional.isEmpty()) {
-                throw new UsernameNotFoundException("not registered user");
-            }
-            Authentication auth = new UsernamePasswordAuthenticationToken(
-                    kakaoId,
-                    "",
-                    List.of(new SimpleGrantedAuthority("ROLE_USER"))
+            User user = userRepository.findByKakaoId(kakaoId)
+                    .orElseThrow(()-> new UsernameNotFoundException("not registered user"));
+            PrincipalDetails principalDetails = new PrincipalDetails(user);
+            return new UsernamePasswordAuthenticationToken(
+                    principalDetails,
+                    null,
+                    principalDetails.getAuthorities()
             );
-            return auth;
         } catch (Exception e) {
             throw new RuntimeException("authentication 실패", e);
         }

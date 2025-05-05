@@ -72,8 +72,7 @@ public class AuthController {
             String jwtAccessToken = authorizationHeader.replace("Bearer ","");
             kakaoService.unlinkUser(jwtAccessToken);
             return ResponseEntity.ok().body("탈퇴 성공");
-        } catch (FeignException e) { // Kakao API 요청하다 실패했을 때
-            // FeignException은 statusCode + responseBody를 가짐
+        } catch (FeignException e) {
             return ResponseEntity.status(e.status()).body("Kakao API에 unlink 요청 실패: " + e.contentUTF8());
         } catch (Exception e) {
             e.printStackTrace();
