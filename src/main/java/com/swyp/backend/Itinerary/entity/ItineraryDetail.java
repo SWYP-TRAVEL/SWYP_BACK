@@ -1,26 +1,22 @@
-package com.swyp.backend.plan.entity;
-
-
-import com.swyp.backend.user.entity.User;
+package com.swyp.backend.Itinerary.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
-@Table(name="plan_info")
+@Table(name="itinerary_detail")
 @Data
-@ToString(exclude = "plan")
-public class PlanInfo {
+@ToString(exclude = "itinerary")
+public class ItineraryDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "plan_id", nullable = false)
-    private Plan plan;
+    @JoinColumn(name = "itinerary_id", nullable = false)
+    private Itinerary itinerary;
 
     @Column(name="travel_with")
     private String travelWith;

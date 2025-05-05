@@ -1,13 +1,8 @@
-package com.swyp.backend.plan.controller;
-
-import com.swyp.backend.auth.security.PrincipalDetails;
-import com.swyp.backend.plan.dto.ItinerariesLists;
-import com.swyp.backend.plan.dto.ItineraryInfo;
-import com.swyp.backend.plan.service.ItineraryService;
-import com.swyp.backend.user.entity.User;
+package com.swyp.backend.Itinerary.controller;
+import com.swyp.backend.Itinerary.dto.ItineraryScheduleResponse;
+import com.swyp.backend.Itinerary.service.ItineraryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,9 +28,10 @@ public class ItineraryController {
 
 
     // 해당 코스 상세 조회 -> 코스 id로 조회
-//    @GetMapping("/lists/{id}")
-//    public ResponseEntity<ItineraryInfo> getItineraryDetail(@PathVariable Long id) {
-//        ItineraryInfo info = itineraryService.getItineraryDetailById(id);
-//        return ResponseEntity.ok(info);
-//    }
+    @GetMapping("/lists/{id}")
+    public ResponseEntity<List<ItineraryScheduleResponse>> getItineraryDetail(@PathVariable("id") Long itineraryId) {
+        List<ItineraryScheduleResponse> schedules = itineraryService.getItinerarySchedules(itineraryId);
+        return ResponseEntity.ok(schedules);
+    }
+
 }

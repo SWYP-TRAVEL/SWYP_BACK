@@ -1,4 +1,4 @@
-package com.swyp.backend.plan.dto;
+package com.swyp.backend.Itinerary.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

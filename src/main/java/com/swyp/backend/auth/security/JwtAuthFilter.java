@@ -17,7 +17,8 @@ public class JwtAuthFilter extends GenericFilterBean {
     private final JwtAuthentication jwtAuthentication;
     private static final List<String> skipPaths = List.of(
             "/api/v1/auth/kakao",
-            "/api/v1/auth/token/reissue"
+            "/api/v1/auth/token/reissue",
+            "/api/v1/itinerary/**"
     );
 
     @Override
