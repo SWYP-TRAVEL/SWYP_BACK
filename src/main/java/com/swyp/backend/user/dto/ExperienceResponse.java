@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 public class ExperienceResponse {
     private boolean success;
     private String feedback;
+    private int rating;
     private LocalDateTime createdAt;
 }
 

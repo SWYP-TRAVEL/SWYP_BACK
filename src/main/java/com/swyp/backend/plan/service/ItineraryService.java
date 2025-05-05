@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -32,9 +33,10 @@ public class ItineraryService {
                 })
                 .collect(Collectors.toList());
     }
+
     // 여행 상세 조회
-//    public ItineraryInfo getItineraryDetailById(Long id){
-//
+//    public ItineraryInfo getItineraryDetailById(Long planId){
+//        Optional<Plan> plan =  itineraryRepository.findById(planId);
 //    }
 
 

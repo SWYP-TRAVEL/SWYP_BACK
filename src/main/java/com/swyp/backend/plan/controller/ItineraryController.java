@@ -26,14 +26,13 @@ public class ItineraryController {
 //    }
 
     // 여행 코스들 조회 - isPublic
-
 //    @GetMapping("/lists")
 //    public ResponseEntity<List<ItinerariesLists>> getItineraryLists(){
 //        return ResponseEntity.ok();
 //    }
 
 
-//    // 해당 코스 상세 조회 -> 코스 id로 조회
+    // 해당 코스 상세 조회 -> 코스 id로 조회
 //    @GetMapping("/lists/{id}")
 //    public ResponseEntity<ItineraryInfo> getItineraryDetail(@PathVariable Long id) {
 //        ItineraryInfo info = itineraryService.getItineraryDetailById(id);

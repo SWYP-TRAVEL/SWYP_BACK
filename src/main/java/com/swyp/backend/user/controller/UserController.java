@@ -6,6 +6,7 @@ import com.swyp.backend.plan.dto.ItinerariesLists;
 import com.swyp.backend.plan.service.ItineraryService;
 import com.swyp.backend.user.dto.ExperienceRequest;
 import com.swyp.backend.user.dto.ExperienceResponse;
+import com.swyp.backend.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -20,14 +21,13 @@ import java.util.List;
 @RequestMapping("/api/v1/user")
 public class UserController {
     private final ItineraryService itineraryService;
+    private final UserService userService;
     @PostMapping("/experience")
-    public ResponseEntity<ExperienceResponse> submitExperience(@RequestBody(required = false) ExperienceRequest experienceRequest) {
-        LocalDateTime createdAt = LocalDateTime.now();
-        ExperienceResponse response = new ExperienceResponse(
-                true,
-                experienceRequest.getFeedback(),
-                createdAt
-        );
+    public ResponseEntity<ExperienceResponse> submitExperience(
+            @AuthenticationPrincipal PrincipalDetails principalDetails,
+            @RequestBody ExperienceRequest experienceRequest) {
+        Long userId = principalDetails.getUser().getId();
+        ExperienceResponse response = userService.saveExperience(userId, experienceRequest);
         return ResponseEntity.ok(response);
     }
     @GetMapping("/mypage/itineraries")
