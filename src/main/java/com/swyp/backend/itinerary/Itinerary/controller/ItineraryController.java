@@ -1,16 +1,8 @@
-package com.swyp.backend.plan.controller;
+package com.swyp.backend.itinerary.plan.controller;
 
-import com.swyp.backend.auth.security.PrincipalDetails;
-import com.swyp.backend.plan.dto.ItinerariesLists;
-import com.swyp.backend.plan.dto.ItineraryInfo;
-import com.swyp.backend.plan.service.ItineraryService;
-import com.swyp.backend.user.entity.User;
+import com.swyp.backend.itinerary.plan.service.ItineraryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @RestController

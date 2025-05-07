@@ -1,18 +1,14 @@
-package com.swyp.backend.plan.service;
+package com.swyp.backend.itinerary.plan.service;
 
-import com.swyp.backend.plan.dto.ItinerariesLists;
-import com.swyp.backend.plan.dto.ItineraryInfo;
-import com.swyp.backend.plan.entity.Plan;
-import com.swyp.backend.plan.entity.PlanInfo;
-import com.swyp.backend.plan.repository.ItineraryRepository;
+import com.swyp.backend.itinerary.plan.dto.ItinerariesLists;
+import com.swyp.backend.itinerary.plan.entity.PlanInfo;
+import com.swyp.backend.itinerary.plan.entity.Plan;
+import com.swyp.backend.itinerary.plan.repository.ItineraryRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor

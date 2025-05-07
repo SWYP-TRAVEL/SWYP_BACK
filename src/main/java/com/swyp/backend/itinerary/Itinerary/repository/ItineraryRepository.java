@@ -1,6 +1,6 @@
-package com.swyp.backend.plan.repository;
+package com.swyp.backend.itinerary.plan.repository;
 
-import com.swyp.backend.plan.entity.Plan;
+import com.swyp.backend.itinerary.plan.entity.Plan;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
