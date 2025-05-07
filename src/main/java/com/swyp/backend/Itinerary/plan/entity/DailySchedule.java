@@ -1,27 +1,40 @@
 package com.swyp.backend.itinerary.plan.entity;
 
+import com.swyp.backend.itinerary.plan.dto.DailyScheduleDto;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 @Entity
 @Data
 @Table(name="daily_schedule")
-@ToString(exclude = {"itinerary", "attraction"})
 public class DailySchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="itinerary_id")
-    private Itinerary itinerary;
+    @Column(name = "itinerary_id")
+    private Long itineraryId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="attraction_id")
-    private Attraction attraction;
+    private List<Attraction> attractions = new ArrayList<>();
 
     @Column(name="day_date")
-    private Integer dayDate;
+    private LocalDate dayDate;
 
+    public DailyScheduleDto toDto(){
+        return DailyScheduleDto.builder()
+                .id(id)
+                .itineraryId(itineraryId)
+                .attractions(attractions.stream().map(Attraction::toDto).collect(Collectors.toList()))
+                .dayDate(dayDate)
+                .build();
+    }
 }
