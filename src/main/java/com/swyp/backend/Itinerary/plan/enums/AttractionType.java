@@ -1,4 +1,4 @@
-package com.swyp.backend.Itinerary.enums;
+package com.swyp.backend.itinerary.plan.enums;
 
 public enum AttractionType {
     PLACE, MEAL, ACTIVITY

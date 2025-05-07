@@ -1,7 +1,7 @@
-package com.swyp.backend.Itinerary.entity;
+package com.swyp.backend.itinerary.plan.entity;
 
 
-import com.swyp.backend.Itinerary.enums.AttractionType;
+import com.swyp.backend.itinerary.plan.enums.AttractionType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;

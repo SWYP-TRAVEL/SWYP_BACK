@@ -1,9 +1,8 @@
 package com.swyp.backend.itinerary.route.service;
 
-import com.swyp.backend.itinerary.planer.dto.AttractionDto;
-import com.swyp.backend.itinerary.planer.entity.Attraction;
-import com.swyp.backend.itinerary.planer.repository.AttractionRepository;
-import com.swyp.backend.itinerary.route.dto.Coordinates;
+import com.swyp.backend.itinerary.plan.dto.AttractionDto;
+import com.swyp.backend.itinerary.plan.entity.Attraction;
+import com.swyp.backend.itinerary.plan.repository.AttractionRepository;
 import com.swyp.backend.itinerary.route.dto.RouteTimeRequest;
 import com.swyp.backend.itinerary.route.dto.RouteTimeResponse;
 import com.swyp.backend.itinerary.route.entity.RouteTime;
