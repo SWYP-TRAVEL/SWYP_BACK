@@ -1,10 +1,16 @@
 package com.swyp.backend.auth.service;
 
+import com.swyp.backend.auth.client.KakaoFeignClient;
 import com.swyp.backend.auth.dto.KakaoTokenResponse;
+import com.swyp.backend.auth.dto.KakaoUnlinkResponse;
 import com.swyp.backend.auth.dto.KakaoUserDTO;
 import com.swyp.backend.auth.security.JwtTokenProvider;
 import com.swyp.backend.user.entity.User;
+import com.swyp.backend.user.repository.UserRepository;
 import com.swyp.backend.user.service.UserService;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
@@ -21,10 +27,16 @@ import org.springframework.web.client.RestTemplate;
 @Service
 @RequiredArgsConstructor
 public class KakaoService {
+    @Value("${custom.jwt.secretKey}")
+    private String secretKey;
+    @Value("${kakao.admin.key}")
+    private String adminKey;
     private final static String KAKAO_AUTH_URI="https://kauth.kakao.com/oauth/token";
     private final static String KAKAO_API_URI = "https://kapi.kakao.com/v2/user/me";
     private final JwtTokenProvider jwtTokenProvider;
     private final UserService userService;
+    private final KakaoFeignClient kakaoFeignClient;
+    private final UserRepository userRepository;
     @Value("${kakao.client.id}")
     private String KAKAO_CLIENT_ID;
     @Value("${kakao.redirect.url}")
@@ -59,9 +71,12 @@ public class KakaoService {
         String refreshToken = (String) json.get("refresh_token");
         Object expires = json.get("expires_in");
         Long expiresIn = ((Number) expires).longValue();
+        return KakaoTokenResponse.builder()
+                .accessToken(accessToken)
+                .refreshToken(refreshToken)
+                .expiresIn(expiresIn)
+                .build();
 
-
-        return new KakaoTokenResponse(accessToken, refreshToken, expiresIn);
     }
 
     public KakaoUserDTO getUserInfoWithToken(String accessToken) throws Exception{
@@ -104,6 +119,33 @@ public class KakaoService {
                 .accessToken(jwt.getAccessToken())
                 .refreshToken(jwt.getRefreshToken())
                 .expiresIn(jwt.getExpiresIn())
+                .userName(kakaoUser.getName())
                 .build();
+    }
+    public String extractKakaoIdFromJwt(String jwt) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(secretKey)
+                .parseClaimsJws(jwt.replace("Bearer ", ""))
+                .getBody();
+        return claims.getSubject();
+    }
+    @Transactional
+    public void unlinkUser(String accessToken) {
+        System.out.println("unlinkUser accessToken: "+ accessToken);
+        Claims claims = Jwts.parser()
+                .setSigningKey(secretKey)
+                .parseClaimsJws(accessToken.replace("Bearer ", ""))
+                .getBody();
+        System.out.println("claims"+claims);
+        Long kakaoId = Long.valueOf(claims.getSubject());
+        System.out.println("kakaoId"+kakaoId);
+        String adminKeyAuthorization = "KakaoAK " + adminKey;
+        System.out.println("adminKeyAuthorization: " + adminKeyAuthorization);
+        KakaoUnlinkResponse response = kakaoFeignClient.unlinkUser(
+                adminKeyAuthorization,
+                "user_id",
+                kakaoId
+        );
+        userRepository.deleteByKakaoId(Long.valueOf(kakaoId));
     }
 }

@@ -6,6 +6,7 @@ import com.swyp.backend.auth.dto.KakaoUserDTO;
 import com.swyp.backend.auth.dto.SocialLoginRequest;
 import com.swyp.backend.auth.security.JwtTokenProvider;
 import com.swyp.backend.auth.service.KakaoService;
+import feign.FeignException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -41,6 +42,7 @@ public class AuthController {
             KakaoTokenResponse responseBody = KakaoTokenResponse.builder()
                     .accessToken(jwt.getAccessToken())
                     .expiresIn(jwt.getExpiresIn())
+                    .userName(jwt.getUserName())
                     .build();
 
             return ResponseEntity.ok()
@@ -55,15 +57,26 @@ public class AuthController {
     public ResponseEntity<KakaoTokenResponse> reissue(HttpServletRequest request) {
         String refreshToken = extractFromCookie(request);
         if (refreshToken == null) {
-            System.out.println("cookie isnull");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
         try {
             KakaoTokenResponse newTokens = jwtTokenProvider.reissueToken(refreshToken);
             return ResponseEntity.ok(newTokens);
         } catch (Exception e) {
-            System.out.println("diff error");
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+    }
+    @PostMapping("/unlink")
+    public ResponseEntity<?> unlinkKakaoUser(@RequestHeader("Authorization") String authorizationHeader) {
+        try {
+            String jwtAccessToken = authorizationHeader.replace("Bearer ","");
+            kakaoService.unlinkUser(jwtAccessToken);
+            return ResponseEntity.ok().body("탈퇴 성공");
+        } catch (FeignException e) {
+            return ResponseEntity.status(e.status()).body("Kakao API에 unlink 요청 실패: " + e.contentUTF8());
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("탈퇴 실패: " + e.getMessage());
         }
     }
 

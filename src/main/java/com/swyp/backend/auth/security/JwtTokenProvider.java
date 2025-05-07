@@ -26,7 +26,7 @@ public class JwtTokenProvider {
     private String secretKey;
     private final UserRepository userRepository;
 
-    private final Long tokenValidaity = 1000L*10; // 10초 (test용)
+    private final Long tokenValidaity = 1000L*60*10; // 10분 (test용)
 
     public KakaoTokenResponse createToken(String kakaoId, String name){
         Claims claims = Jwts.claims().setSubject(kakaoId);
@@ -77,7 +77,6 @@ public class JwtTokenProvider {
                 .setExpiration(new Date(now.getTime() + tokenValidaity))
                 .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
-
         return KakaoTokenResponse.builder()
                 .accessToken(accessToken)
                 .refreshToken(null)
