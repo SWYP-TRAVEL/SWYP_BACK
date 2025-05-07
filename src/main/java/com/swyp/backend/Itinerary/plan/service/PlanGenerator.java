@@ -1,4 +1,4 @@
-package com.swyp.backend.itinerary.plan.service;
+package com.swyp.backend.Itinerary.plan.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.stereotype.Service;

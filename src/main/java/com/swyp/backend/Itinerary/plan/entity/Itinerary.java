@@ -1,6 +1,5 @@
-package com.swyp.backend.itinerary.plan.entity;
-import com.swyp.backend.itinerary.plan.dto.ItineraryResponse;
-import com.swyp.backend.user.entity.User;
+package com.swyp.backend.Itinerary.plan.entity;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;

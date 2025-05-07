@@ -1,14 +1,12 @@
-package com.swyp.backend.itinerary.plan.entity;
+package com.swyp.backend.Itinerary.plan.entity;
 
-import com.swyp.backend.itinerary.plan.dto.DailyScheduleDto;
+import com.swyp.backend.Itinerary.plan.dto.DailyScheduleDto;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Entity

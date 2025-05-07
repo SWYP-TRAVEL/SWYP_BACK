@@ -1,4 +1,4 @@
-package com.swyp.backend.itinerary.route.controller;
+package com.swyp.backend.Itinerary.route.controller;
 
 import com.swyp.backend.itinerary.route.dto.RouteTimeRequest;
 import com.swyp.backend.itinerary.route.dto.RouteTimeResponse;

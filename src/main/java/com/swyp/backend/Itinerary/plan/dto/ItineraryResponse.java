@@ -1,6 +1,5 @@
-package com.swyp.backend.itinerary.plan.dto;
-import com.swyp.backend.itinerary.plan.entity.DailySchedule;
-import com.swyp.backend.itinerary.plan.enums.AttractionType;
+package com.swyp.backend.Itinerary.plan.dto;
+
 import com.swyp.backend.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
