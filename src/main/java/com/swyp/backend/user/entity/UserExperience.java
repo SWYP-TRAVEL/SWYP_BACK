@@ -20,7 +20,7 @@ public class UserExperience {
     private LocalDateTime createdAt;
 
     @OneToOne
-    @JoinColumn(name = "user_id", unique = true)
+    @JoinColumn(name = "created_by", unique = true)
     private User user;
 
 }

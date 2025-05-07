@@ -5,7 +5,6 @@ import com.swyp.backend.auth.dto.KakaoTokenResponse;
 import com.swyp.backend.auth.dto.KakaoUnlinkResponse;
 import com.swyp.backend.auth.dto.KakaoUserDTO;
 import com.swyp.backend.auth.security.JwtTokenProvider;
-import com.swyp.backend.user.entity.User;
 import com.swyp.backend.user.repository.UserRepository;
 import com.swyp.backend.user.service.UserService;
 import io.jsonwebtoken.Claims;

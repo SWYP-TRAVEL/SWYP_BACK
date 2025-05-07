@@ -1,6 +1,6 @@
 package com.swyp.backend.user.entity;
 
-import com.swyp.backend.plan.entity.Plan;
+import com.swyp.backend.Itinerary.entity.Itinerary;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -26,7 +26,7 @@ public class User {
     private String refreshToken;
 
     @OneToMany(mappedBy = "createdBy", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Plan> plans = new ArrayList<>();
+    private List<Itinerary> itineraries = new ArrayList<>();
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private UserExperience experience;
