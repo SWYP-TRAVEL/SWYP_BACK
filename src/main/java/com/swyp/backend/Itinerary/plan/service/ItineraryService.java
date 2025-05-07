@@ -3,6 +3,8 @@ package com.swyp.backend.Itinerary.plan.service;
 import com.swyp.backend.Itinerary.plan.dto.ItinerariesLists;
 import com.swyp.backend.Itinerary.plan.dto.ItineraryResponse;
 import com.swyp.backend.Itinerary.plan.entity.Itinerary;
+import com.swyp.backend.Itinerary.plan.entity.Attraction;
+import com.swyp.backend.Itinerary.plan.entity.DailySchedule;
 import com.swyp.backend.Itinerary.plan.repository.DailyScheduleRepository;
 import com.swyp.backend.Itinerary.plan.repository.ItineraryRepository;
 import com.swyp.backend.user.repository.UserRepository;

@@ -4,12 +4,10 @@ import com.swyp.backend.Itinerary.plan.dto.AttractionDto;
 import com.swyp.backend.Itinerary.plan.enums.AttractionType;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.ToString;
 
 @Entity
 @Data
 @Table(name="attraction")
-@ToString(exclude = "dailySchedules")
 public class Attraction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

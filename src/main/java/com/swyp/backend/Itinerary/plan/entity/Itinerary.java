@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Table(name="itinerary")
 @Data
-@ToString(exclude = {"itineraryDetail","dailySchedule", "createdBy"})
+@ToString(exclude = {"dailySchedule", "createdBy"})
 public class Itinerary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
