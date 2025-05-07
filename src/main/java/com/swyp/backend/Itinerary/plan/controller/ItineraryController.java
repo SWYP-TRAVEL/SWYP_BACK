@@ -1,8 +1,15 @@
 package com.swyp.backend.itinerary.plan.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.swyp.backend.itinerary.plan.dto.PlanPreviewDto;
+import com.swyp.backend.itinerary.plan.dto.UserPlanInputDto;
 import com.swyp.backend.itinerary.plan.service.ItineraryService;
+import com.swyp.backend.itinerary.plan.service.PlanGenerator;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -10,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 public class ItineraryController {
 
     private final ItineraryService itineraryService;
+    private final PlanGenerator planGenerator;
 
     //여행 코스 저장
 //    @PostMapping("/save")
@@ -30,4 +38,9 @@ public class ItineraryController {
 //        ItineraryInfo info = itineraryService.getItineraryDetailById(id);
 //        return ResponseEntity.ok(info);
 //    }
+
+    @GetMapping("/preview")
+    public ResponseEntity<List<PlanPreviewDto>> previewItinerary(@ModelAttribute UserPlanInputDto userPlanInputDto) {
+        return ResponseEntity.ok(planGenerator.generateRecommendDestinations(userPlanInputDto));
+    }
 }
