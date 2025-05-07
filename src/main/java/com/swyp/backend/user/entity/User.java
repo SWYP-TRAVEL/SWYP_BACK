@@ -1,6 +1,6 @@
 package com.swyp.backend.user.entity;
 
-import com.swyp.backend.Itinerary.entity.Itinerary;
+import com.swyp.backend.itinerary.plan.entity.Itinerary;
 import jakarta.persistence.*;
 import lombok.Data;
 
