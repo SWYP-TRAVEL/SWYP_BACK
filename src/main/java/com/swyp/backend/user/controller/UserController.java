@@ -2,18 +2,16 @@ package com.swyp.backend.user.controller;
 
 
 import com.swyp.backend.auth.security.PrincipalDetails;
-import com.swyp.backend.plan.dto.ItinerariesLists;
-import com.swyp.backend.plan.service.ItineraryService;
+import com.swyp.backend.Itinerary.dto.ItinerariesLists;
+import com.swyp.backend.Itinerary.service.ItineraryService;
 import com.swyp.backend.user.dto.ExperienceRequest;
 import com.swyp.backend.user.dto.ExperienceResponse;
 import com.swyp.backend.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController

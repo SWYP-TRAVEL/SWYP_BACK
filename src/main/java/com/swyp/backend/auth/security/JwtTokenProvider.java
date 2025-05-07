@@ -1,8 +1,6 @@
 package com.swyp.backend.auth.security;
 
 import com.swyp.backend.auth.dto.KakaoTokenResponse;
-import com.swyp.backend.auth.dto.KakaoUserDTO;
-import com.swyp.backend.auth.service.KakaoService;
 import com.swyp.backend.user.entity.User;
 import com.swyp.backend.user.repository.UserRepository;
 import io.jsonwebtoken.Claims;
@@ -11,13 +9,9 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-import java.util.Collections;
+
 import java.util.Date;
-import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
