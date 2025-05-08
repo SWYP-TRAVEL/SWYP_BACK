@@ -44,6 +44,7 @@ public class AuthController {
                     .header(HttpHeaders.SET_COOKIE, refreshCookie.toString())
                     .body(responseBody);
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
