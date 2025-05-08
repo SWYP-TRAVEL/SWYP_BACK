@@ -28,6 +28,15 @@ public class ItineraryController {
         return ResponseEntity.ok(itineraryService.getItinerary(id));
     }
 
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> makeItineraryPublic(@PathVariable Long id,
+                                                       @RequestBody Boolean isSave,
+                                                       @RequestBody Boolean isPublic){
+        if(isSave) itineraryService.saveItinerary(id);
+        if(isPublic) itineraryService.makeItineraryPublic(id);
+        return ResponseEntity.ok(null);
+    }
+
     //여행 코스 저장
 //    @PostMapping("/save")
 //    public saveItinerary(){
