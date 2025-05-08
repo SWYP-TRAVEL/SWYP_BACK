@@ -3,8 +3,7 @@ package com.swyp.backend.itinerary.plan.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.swyp.backend.itinerary.plan.dto.PlanPreviewDto;
-import com.swyp.backend.itinerary.plan.dto.UserPlanInputDto;
+import com.swyp.backend.itinerary.plan.dto.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -31,7 +30,6 @@ public class PlanGenerator {
 
     public List<PlanPreviewDto> generateRecommendDestinations(UserPlanInputDto input) {
         String path = "http://"+mcpClientHost+":"+mcpClientPort+"/api/triplet";
-        System.out.println(path);
         Map<String, Object> requestParams = new HashMap<>();
         requestParams.put("travel_with", input.getTravelWith());
         requestParams.put("start_date", input.getStartDate().toString());
@@ -51,9 +49,6 @@ public class PlanGenerator {
         catch (JsonProcessingException e) {
             return null;
         }
-        
-
-        System.out.println("qqqqqqqqq"+response.toString());
         List<PlanPreviewDto> dtos = new ArrayList<>();
 
         jsonNode.forEach(tripNode -> {
@@ -66,5 +61,26 @@ public class PlanGenerator {
         });
 
         return dtos;
+    }
+
+    public ItineraryResponse generateItinerary(UserPlanRequirementDto input) {
+        String path = "http://"+mcpClientHost+":"+mcpClientPort+"/api/create";
+        Map<String, Object> requestParams = new HashMap<>();
+        requestParams.put("travel_with", input.getTravelWith());
+        requestParams.put("start_date", input.getStartDate().toString());
+        requestParams.put("end_date", input.getEndDate().toString());
+        requestParams.put("description", input.getDescription());
+        requestParams.put("theme", input.getTheme());
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestParams, headers);
+
+        JsonNode response = restTemplate.postForObject(path, entity, JsonNode.class);
+
+
+
+        return null;
     }
 }
