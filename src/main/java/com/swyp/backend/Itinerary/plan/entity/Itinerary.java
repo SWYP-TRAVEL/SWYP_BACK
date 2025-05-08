@@ -1,4 +1,5 @@
 package com.swyp.backend.itinerary.plan.entity;
+import com.swyp.backend.itinerary.plan.dto.ItineraryResponse;
 import com.swyp.backend.user.entity.User;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -17,11 +18,11 @@ public class Itinerary {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="title")
     private String title;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "created_by", nullable = false)
-    private User createdBy;
+    @Column(name="created_by")
+    private Long createdBy;
 
     @Column(name="is_public", nullable = false)
     private boolean isPublic = false;
@@ -32,9 +33,11 @@ public class Itinerary {
     @Column(name="created_at", nullable = false)
     private LocalDate createdAt;
 
-    @OneToOne(mappedBy = "itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
-    private ItineraryDetail itineraryDetail;
+    // 연관관계가 너무 복잡함
+    //@OneToOne(mappedBy = "itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
+    //private ItineraryDetail itineraryDetail;
 
-    @OneToMany(mappedBy="itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "itinerary_id")
     private List<DailySchedule> dailySchedule = new ArrayList<>();
 }

@@ -1,6 +1,7 @@
 package com.swyp.backend.itinerary.plan.entity;
 
 
+import com.swyp.backend.itinerary.plan.dto.AttractionDto;
 import com.swyp.backend.itinerary.plan.enums.AttractionType;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -36,9 +37,18 @@ public class Attraction {
     @Column(name="business_time")
     private String businessTime;
 
-    private Float rating;
+    private Double rating;
 
-    @OneToMany(mappedBy = "attraction", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DailySchedule> dailySchedules = new ArrayList<>();
-
+    public AttractionDto toDto(){
+        return AttractionDto.builder()
+                .id(id)
+                .type(String.valueOf(type))
+                .name(name)
+                .address(address)
+                .description(description)
+                .coverImage(coverImage)
+                .businessTime(businessTime)
+                .rating(rating)
+                .build();
+    }
 }

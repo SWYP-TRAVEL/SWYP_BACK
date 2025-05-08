@@ -1,9 +1,13 @@
 package com.swyp.backend.itinerary.plan.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class AttractionDto {
     private long id;
@@ -11,7 +15,7 @@ public class AttractionDto {
     private String name;
     private String address;
     private String description;
-    private String cover_image;
-    private String business_time;
+    private String coverImage;
+    private String businessTime;
     private Double rating;
 }
