@@ -44,6 +44,7 @@ jobs:
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           JWT_SECRET_KEY: ${{secrets.JWT_SECRET_KEY}}
+          REDIRECT_URL: ${{ secrets.REDIRECT_URL }}
 
 
       - name: Build Docker image # repo 이름이 소문자여야됨.

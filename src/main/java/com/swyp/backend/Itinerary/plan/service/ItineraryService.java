@@ -9,6 +9,7 @@ import com.swyp.backend.Itinerary.plan.repository.DailyScheduleRepository;
 import com.swyp.backend.Itinerary.plan.repository.ItineraryRepository;
 import com.swyp.backend.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -56,6 +57,25 @@ public class ItineraryService {
             responses.add(itineraryResponse);
         }
         return responses;
+    }
+
+    public boolean makeItineraryPublic(Long itineraryId){
+        Itinerary itinerary = itineraryRepository.findById(itineraryId).orElse(null);
+        if(itinerary == null){
+            return false;
+        }
+        itineraryRepository.save(itinerary);
+        return true;
+    }
+
+    public boolean saveItinerary(Long itineraryId) {
+        Itinerary itinerary = itineraryRepository.findById(itineraryId).orElse(null);
+        if(itinerary == null){
+            return false;
+        }
+        itinerary.setSaved(true);
+        itineraryRepository.save(itinerary);
+        return true;
     }
 
 }
