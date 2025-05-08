@@ -25,7 +25,7 @@ public class DailySchedule {
     private List<Attraction> attractions = new ArrayList<>();
 
     @Column(name="day_date")
-    private LocalDate dayDate;
+    private Integer dayDate;
 
     public DailyScheduleDto toDto(){
         return DailyScheduleDto.builder()
