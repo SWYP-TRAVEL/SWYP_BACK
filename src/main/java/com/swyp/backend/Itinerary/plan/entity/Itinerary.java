@@ -33,8 +33,8 @@ public class Itinerary {
     private LocalDate createdAt;
 
     // 연관관계가 너무 복잡함
-    @OneToOne(mappedBy = "itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
-    private ItineraryDetail itineraryDetail;
+//    @OneToOne(mappedBy = "itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private ItineraryDetail itineraryDetail;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "itinerary_id")
