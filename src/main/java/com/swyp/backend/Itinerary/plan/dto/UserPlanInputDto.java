@@ -1,15 +1,18 @@
 package com.swyp.backend.itinerary.plan.dto;
 
-import lombok.Data;
-import lombok.Getter;
+import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
 @Getter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserPlanInputDto {
     private String travelWith;
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private String description;
 }
