@@ -1,9 +1,8 @@
-package com.swyp.backend.Itinerary.plan.dto;
+package com.swyp.backend.itinerary.plan.dto;
 
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @Getter

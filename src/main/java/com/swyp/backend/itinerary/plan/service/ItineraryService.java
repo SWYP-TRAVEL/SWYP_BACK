@@ -1,15 +1,14 @@
-package com.swyp.backend.Itinerary.plan.service;
+package com.swyp.backend.itinerary.plan.service;
 
-import com.swyp.backend.Itinerary.plan.dto.ItinerariesLists;
-import com.swyp.backend.Itinerary.plan.dto.ItineraryResponse;
-import com.swyp.backend.Itinerary.plan.entity.Itinerary;
-import com.swyp.backend.Itinerary.plan.entity.Attraction;
-import com.swyp.backend.Itinerary.plan.entity.DailySchedule;
-import com.swyp.backend.Itinerary.plan.repository.DailyScheduleRepository;
-import com.swyp.backend.Itinerary.plan.repository.ItineraryRepository;
+import com.swyp.backend.itinerary.plan.dto.ItinerariesLists;
+import com.swyp.backend.itinerary.plan.dto.ItineraryResponse;
+import com.swyp.backend.itinerary.plan.entity.Itinerary;
+import com.swyp.backend.itinerary.plan.entity.Attraction;
+import com.swyp.backend.itinerary.plan.entity.DailySchedule;
+import com.swyp.backend.itinerary.plan.repository.DailyScheduleRepository;
+import com.swyp.backend.itinerary.plan.repository.ItineraryRepository;
 import com.swyp.backend.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.BadRequestException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

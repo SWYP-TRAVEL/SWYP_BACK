@@ -1,4 +1,4 @@
-package com.swyp.backend.Itinerary.plan.service;
+package com.swyp.backend.itinerary.plan.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -7,7 +7,6 @@ import com.swyp.backend.itinerary.plan.dto.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

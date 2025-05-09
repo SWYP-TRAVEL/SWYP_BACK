@@ -1,6 +1,6 @@
-package com.swyp.backend.Itinerary.route.repository;
+package com.swyp.backend.itinerary.route.repository;
 
-import com.swyp.backend.Itinerary.route.entity.RouteTime;
+import com.swyp.backend.itinerary.route.entity.RouteTime;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

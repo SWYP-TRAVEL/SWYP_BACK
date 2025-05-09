@@ -1,8 +1,8 @@
-package com.swyp.backend.Itinerary.route.controller;
+package com.swyp.backend.itinerary.route.controller;
 
-import com.swyp.backend.Itinerary.route.dto.RouteTimeRequest;
-import com.swyp.backend.Itinerary.route.dto.RouteTimeResponse;
-import com.swyp.backend.Itinerary.route.service.RouteService;
+import com.swyp.backend.itinerary.route.dto.RouteTimeRequest;
+import com.swyp.backend.itinerary.route.dto.RouteTimeResponse;
+import com.swyp.backend.itinerary.route.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

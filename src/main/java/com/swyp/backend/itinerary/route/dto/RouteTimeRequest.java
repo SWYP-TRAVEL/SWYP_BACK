@@ -1,4 +1,4 @@
-package com.swyp.backend.Itinerary.route.dto;
+package com.swyp.backend.itinerary.route.dto;
 
 import lombok.Builder;
 import lombok.Data;

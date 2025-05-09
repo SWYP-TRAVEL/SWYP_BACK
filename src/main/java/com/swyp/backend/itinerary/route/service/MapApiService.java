@@ -1,7 +1,7 @@
-package com.swyp.backend.Itinerary.route.service;
+package com.swyp.backend.itinerary.route.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.swyp.backend.Itinerary.route.dto.Coordinates;
+import com.swyp.backend.itinerary.route.dto.Coordinates;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;

@@ -1,8 +1,8 @@
 package com.swyp.backend.user.controller;
 
 
-import com.swyp.backend.Itinerary.plan.dto.ItinerariesLists;
-import com.swyp.backend.Itinerary.plan.service.ItineraryService;
+import com.swyp.backend.itinerary.plan.dto.ItinerariesLists;
+import com.swyp.backend.itinerary.plan.service.ItineraryService;
 import com.swyp.backend.auth.security.PrincipalDetails;
 import com.swyp.backend.user.dto.ExperienceRequest;
 import com.swyp.backend.user.dto.ExperienceResponse;

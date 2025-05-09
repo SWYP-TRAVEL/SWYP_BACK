@@ -1,4 +1,4 @@
-package com.swyp.backend.Itinerary.route.entity;
+package com.swyp.backend.itinerary.route.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
