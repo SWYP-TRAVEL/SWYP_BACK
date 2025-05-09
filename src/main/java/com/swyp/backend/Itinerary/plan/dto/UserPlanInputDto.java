@@ -1,4 +1,4 @@
-package com.swyp.backend.itinerary.plan.dto;
+package com.swyp.backend.Itinerary.plan.dto;
 
 import lombok.*;
 

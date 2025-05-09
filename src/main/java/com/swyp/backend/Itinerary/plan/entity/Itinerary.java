@@ -1,6 +1,5 @@
-package com.swyp.backend.itinerary.plan.entity;
-import com.swyp.backend.itinerary.plan.dto.ItineraryResponse;
-import com.swyp.backend.user.entity.User;
+package com.swyp.backend.Itinerary.plan.entity;
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
@@ -12,7 +11,7 @@ import java.util.List;
 @Entity
 @Table(name="itinerary")
 @Data
-@ToString(exclude = {"itineraryDetail","dailySchedule", "createdBy"})
+@ToString(exclude = {"dailySchedule", "createdBy"})
 public class Itinerary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,8 +33,8 @@ public class Itinerary {
     private LocalDate createdAt;
 
     // 연관관계가 너무 복잡함
-    //@OneToOne(mappedBy = "itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
-    //private ItineraryDetail itineraryDetail;
+//    @OneToOne(mappedBy = "itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private ItineraryDetail itineraryDetail;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "itinerary_id")

@@ -1,15 +1,17 @@
 package com.swyp.backend.user.entity;
 
-import com.swyp.backend.itinerary.plan.entity.Itinerary;
+import com.swyp.backend.Itinerary.plan.entity.Itinerary;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name="users")
-@Data
+@Getter
+@Setter
 public class User {
 
     @Id

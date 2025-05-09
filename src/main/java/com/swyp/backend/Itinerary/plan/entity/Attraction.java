@@ -1,19 +1,13 @@
-package com.swyp.backend.itinerary.plan.entity;
+package com.swyp.backend.Itinerary.plan.entity;
 
-
-import com.swyp.backend.itinerary.plan.dto.AttractionDto;
-import com.swyp.backend.itinerary.plan.enums.AttractionType;
+import com.swyp.backend.Itinerary.plan.dto.AttractionDto;
+import com.swyp.backend.Itinerary.plan.enums.AttractionType;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.ToString;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Data
 @Table(name="attraction")
-@ToString(exclude = "dailySchedules")
 public class Attraction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

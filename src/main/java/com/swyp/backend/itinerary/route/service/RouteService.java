@@ -1,12 +1,12 @@
-package com.swyp.backend.itinerary.route.service;
+package com.swyp.backend.Itinerary.route.service;
 
-import com.swyp.backend.itinerary.plan.dto.AttractionDto;
-import com.swyp.backend.itinerary.plan.entity.Attraction;
-import com.swyp.backend.itinerary.plan.repository.AttractionRepository;
-import com.swyp.backend.itinerary.route.dto.RouteTimeRequest;
-import com.swyp.backend.itinerary.route.dto.RouteTimeResponse;
-import com.swyp.backend.itinerary.route.entity.RouteTime;
-import com.swyp.backend.itinerary.route.repository.RouteTimeRepository;
+import com.swyp.backend.Itinerary.plan.dto.AttractionDto;
+import com.swyp.backend.Itinerary.plan.entity.Attraction;
+import com.swyp.backend.Itinerary.plan.repository.AttractionRepository;
+import com.swyp.backend.Itinerary.route.dto.RouteTimeRequest;
+import com.swyp.backend.Itinerary.route.dto.RouteTimeResponse;
+import com.swyp.backend.Itinerary.route.entity.RouteTime;
+import com.swyp.backend.Itinerary.route.repository.RouteTimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

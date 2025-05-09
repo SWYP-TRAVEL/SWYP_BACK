@@ -5,6 +5,8 @@ import com.swyp.backend.auth.dto.KakaoTokenResponse;
 import com.swyp.backend.auth.dto.KakaoUnlinkResponse;
 import com.swyp.backend.auth.dto.KakaoUserDTO;
 import com.swyp.backend.auth.security.JwtTokenProvider;
+import com.swyp.backend.user.entity.User;
+import com.swyp.backend.user.repository.UserExperienceRepository;
 import com.swyp.backend.user.repository.UserRepository;
 import com.swyp.backend.user.service.UserService;
 import io.jsonwebtoken.Claims;
@@ -18,6 +20,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -36,6 +39,7 @@ public class KakaoService {
     private final UserService userService;
     private final KakaoFeignClient kakaoFeignClient;
     private final UserRepository userRepository;
+    private final UserExperienceRepository userExperienceRepository;
     @Value("${kakao.client.id}")
     private String KAKAO_CLIENT_ID;
     @Value("${kakao.redirect.url}")
@@ -135,16 +139,19 @@ public class KakaoService {
                 .setSigningKey(secretKey)
                 .parseClaimsJws(accessToken.replace("Bearer ", ""))
                 .getBody();
-        System.out.println("claims"+claims);
         Long kakaoId = Long.valueOf(claims.getSubject());
-        System.out.println("kakaoId"+kakaoId);
         String adminKeyAuthorization = "KakaoAK " + adminKey;
-        System.out.println("adminKeyAuthorization: " + adminKeyAuthorization);
         KakaoUnlinkResponse response = kakaoFeignClient.unlinkUser(
                 adminKeyAuthorization,
                 "user_id",
                 kakaoId
         );
-        userRepository.deleteByKakaoId(Long.valueOf(kakaoId));
+        User user = userRepository.findByKakaoId(kakaoId)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        if (user.getExperience() != null) {
+            user.setExperience(null);
+        }
+        user.getItineraries().clear();
+        userRepository.delete(user);
     }
 }
