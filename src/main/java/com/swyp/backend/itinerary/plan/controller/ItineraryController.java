@@ -40,7 +40,7 @@ public class ItineraryController {
         return ResponseEntity.ok(planGenerator.generateRecommendDestinations(userPlanInputDto));
     }
 
-    // public 여행지 (limit 개)
+    // public 여행지 (limit개)
     @GetMapping("/public")
     public ResponseEntity<List<PublicItineraryDto>> getRandomItineraries(@RequestParam(defaultValue = "10") int limit) {
         List<PublicItineraryDto> itineraries = itineraryService.getRandomPublicItineraries(limit);

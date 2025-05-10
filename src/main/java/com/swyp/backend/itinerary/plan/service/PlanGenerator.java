@@ -83,22 +83,4 @@ public class PlanGenerator {
 
         return null;
     }
-//    여행지  새로고침
-//    public AttractionDto replaceSingleAttraction(ReplaceAttractionRequestDto input){
-//
-//        String path = "http://"+mcpClientHost+":"+mcpClientPort+"/api/replace";
-//
-//        Map<String, Object> requestParams = new HashMap<>();
-//        requestParams.put("travel_with", input.getTravelWith());
-//        requestParams.put("start_date", input.getStartDate().toString());
-//        requestParams.put("end_date", input.getEndDate().toString());
-//        requestParams.put("description", input.getDescription());
-//        requestParams.put("theme", input.getTheme());
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.setContentType(MediaType.APPLICATION_JSON);
-//        HttpEntity<ReplaceAttractionRequestDto> entity = new HttpEntity<>(requestParams, headers);
-//        JsonNode response = restTemplate.postForObject(path, entity, JsonNode.class);
-//        return null;
-//    }
 }
