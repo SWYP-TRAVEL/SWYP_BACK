@@ -11,7 +11,10 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class PlanGenerator {
@@ -77,8 +80,6 @@ public class PlanGenerator {
         HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestParams, headers);
 
         JsonNode response = restTemplate.postForObject(path, entity, JsonNode.class);
-
-
 
         return null;
     }
