@@ -2,9 +2,10 @@ package com.swyp.backend.itinerary.plan.service;
 
 import com.swyp.backend.itinerary.plan.dto.ItinerariesLists;
 import com.swyp.backend.itinerary.plan.dto.ItineraryResponse;
-import com.swyp.backend.itinerary.plan.entity.Itinerary;
+import com.swyp.backend.itinerary.plan.dto.PublicItineraryDto;
 import com.swyp.backend.itinerary.plan.entity.Attraction;
 import com.swyp.backend.itinerary.plan.entity.DailySchedule;
+import com.swyp.backend.itinerary.plan.entity.Itinerary;
 import com.swyp.backend.itinerary.plan.repository.DailyScheduleRepository;
 import com.swyp.backend.itinerary.plan.repository.ItineraryRepository;
 import com.swyp.backend.user.repository.UserRepository;
@@ -75,6 +76,17 @@ public class ItineraryService {
         itinerary.setSaved(true);
         itineraryRepository.save(itinerary);
         return true;
+    }
+
+    public List<PublicItineraryDto> getRandomPublicItineraries(int limit) {
+        List<Itinerary> itineraries = itineraryRepository.findRandomPublicItineraries(limit);
+        return itineraries.stream()
+                .map(itinerary -> PublicItineraryDto.builder()
+                        .id(itinerary.getId())
+                        .title(itinerary.getTitle())
+                        .imageUrl(itinerary.getItineraryDetail() != null ? itinerary.getItineraryDetail().getImageUrl() : null)
+                        .build())
+                .collect(Collectors.toList());
     }
 
 }

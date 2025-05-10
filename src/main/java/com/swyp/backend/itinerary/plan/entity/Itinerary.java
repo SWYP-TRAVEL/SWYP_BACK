@@ -32,9 +32,9 @@ public class Itinerary {
     @Column(name="created_at", nullable = false)
     private LocalDate createdAt;
 
-    // 연관관계가 너무 복잡함
-//    @OneToOne(mappedBy = "itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private ItineraryDetail itineraryDetail;
+    // 연관관계가 너무 복잡함 -> imageUrl 가져오려고 풀었습니다ㅠ 다른 방법 있으면 수정해주세요..
+    @OneToOne(mappedBy = "itinerary", cascade = CascadeType.ALL, orphanRemoval = true)
+    private ItineraryDetail itineraryDetail;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "itinerary_id")

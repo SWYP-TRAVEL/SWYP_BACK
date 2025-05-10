@@ -3,6 +3,7 @@ package com.swyp.backend.itinerary.plan.entity;
 import com.swyp.backend.itinerary.plan.dto.DailyScheduleDto;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Data
+@Getter
 @Table(name="daily_schedule")
 public class DailySchedule {
     @Id
